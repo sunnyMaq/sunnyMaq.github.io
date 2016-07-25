@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        #box{width: 300px;height: 300px;border: 1px solid #000000;left: 100px;top:50px;position: absolute;}
+        #box img{width: 300px;}
+        #shadow{cursor:all-scroll;display:none;width: 90px;height: 90px;background: coral;z-index: 2;position: absolute;opacity:0.5;filter:alpha(opacity=80);}
+        #cont{display:none;width: 500px;height: 500px;border: 1px solid #000;position: absolute;overflow: hidden;left: 400px;top:50px;}
+        #cont img{position: absolute}
+    </style>
+    <script>
+        window.onload= function () {
+            var oBox=document.getElementById('box');
+            var oSha=document.getElementById('shadow');
+            var oCont=document.getElementById('cont');
+            var oImg=oCont.getElementsByTagName('img')[0];
+
+            oBox.onmouseover= function () {
+                oSha.style.display = oCont.style.display = 'block';
+            }
+            oBox.onmouseout= function () {
+                oSha.style.display=oCont.style.display='none';
+            }
+            oBox.onmousemove=function(ev){
+                var oEvent=ev ||  event;
+                var l=oEvent.clientX-oBox.offsetLeft-oSha.offsetWidth/2;
+                var t=oEvent.clientY-oBox.offsetTop-oSha.offsetHeight/2;
+
+                if (l<=0) l=0;
+                if(l>=oBox.offsetWidth-oSha.offsetWidth) l=oBox.offsetWidth-oSha.offsetWidth;
+                if(t<=0) t=0;
+                if(t>=oBox.offsetHeight-oSha.offsetHeight) t=oBox.offsetHeight-oSha.offsetHeight;
+
+                oSha.style.top=t+'px';
+                oSha.style.left=l+'px';
+
+                var propL=l/(oBox.offsetWidth-oSha.offsetWidth);
+                var propT=t/(oBox.offsetHeight-oSha.offsetHeight);
+
+                oImg.style.left=-(propL*(oImg.offsetWidth-oCont.offsetWidth))+'px';
+                oImg.style.top=-(propT*(oImg.offsetHeight-oCont.offsetHeight))+'px';
+            }
+        }
+    </script>
+</head>
+<body>
+<div id="box">
+    <span id="shadow"></span>
+    <img src="b3.jpg">
+</div>
+<div id="cont">
+    <img src="b3.jpg">
+</div>
+</body>
+</html>

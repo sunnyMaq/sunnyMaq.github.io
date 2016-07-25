@@ -1,0 +1,210 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>iPhone手机图片查看器 - 智能社 - www.zhinengshe.com</title>
+<link href="style.css" rel="stylesheet" type="text/css" />
+<script src="tween.js"></script>
+<script>
+	window.onload=function(){
+		var oWrap=document.getElementById('wrap');
+		var oUl=oWrap.children[0];
+		var aLi=oUl.children;
+		var oIconBox=document.getElementById('icon-box');
+		var aIcon=oIconBox.children;
+		var arr=[];
+		var zIndex=20;
+		var iNow=0;
+
+		oUl.onmousedown=function(ev){
+			var oEvent= ev || event;
+			var disX=oEvent.clientX-oUl.offsetLeft;
+			var downX=oEvent.clientX;
+
+			document.onmousemove=function(ev){
+				var oEvent= ev || event;
+				var l=oEvent.clientX-disX;
+
+				oUl.style.left=l+'px';
+			}
+			document.onmouseup=function(ev){
+				var oEvent= ev || event;
+				var upX=oEvent.clientX;
+				document.onmousemove=null;
+				document.onmouseup=null;
+				if(Math.abs(downX-upX)>30){
+					if(downX>upX){
+						iNow++;
+						if(iNow>aLi.length-1)iNow=aLi.length-1
+					}else {
+						iNow--;
+						if(iNow<0)iNow=0;
+					}
+					tween(oUl,{left:-aLi[0].offsetWidth*iNow})
+				}else {
+					tween(oUl,{left:-aLi[0].offsetWidth*iNow})
+				}
+
+			}
+			return false;
+		}
+		function addEvent(obj,sEv,fn){
+			if(obj.addEventListener){
+				// chrome  firefox  ie9++;
+				obj.addEventListener(sEv,fn,false);
+			}else{
+				// ie系列
+				obj.attachEvent('on'+sEv,fn);
+			}
+		}
+		function delEvent(obj,sEv,fn){
+			//chrome firefox  ie9++
+			if(obj.removeEventListener){
+				obj.removeEventListener(sEv,fn,false);
+			}else{
+				// ie系列
+				obj.detachEvent('on'+sEv,fn);
+			}
+		}
+//		addEvent(oIconBox,'click',drag(aIcon[i]));
+//		delEvent(oIconBox,'click',drag(aIcon[i]));
+		//图标拖拽
+		for(var i=0;i<aIcon.length;i++){
+			arr.push({left:aIcon[i].offsetLeft,top:aIcon[i].offsetTop});
+		};
+		for(var i=0;i<aIcon.length;i++){
+			aIcon[i].style.left=arr[i].left+'px';
+			aIcon[i].style.top=arr[i].top+'px';
+			aIcon[i].style.position='absolute';
+			aIcon[i].style.margin=0;
+		}
+		//给所有的li加拖拽
+		for(var i=0;i<aIcon.length;i++){
+			drag(aIcon[i]);
+			aIcon[i].index=i;
+		}
+		// 拖拽
+		function drag(obj){
+			obj.onmousedown=function(ev){
+				var oEvent=ev||event;
+				var disX=oEvent.clientX-obj.offsetLeft;
+				var disY=oEvent.clientY-obj.offsetTop;
+				obj.style.zIndex=zIndex++;
+				document.onmousemove=function(ev){
+					var oEvent=ev||event;
+					var l=oEvent.clientX-disX;
+					var t=oEvent.clientY-disY;
+
+					obj.style.left=l+'px';
+					obj.style.top=t+'px';
+				};
+				document.onmouseup=function(){
+					document.onmousemove=null;
+					document.onmouseup=null;
+					var oNear=findNear(obj);
+
+					if(oNear){
+						//换位置
+						obj.style.left=arr[oNear.index].left+'px';
+						obj.style.top=arr[oNear.index].top+'px';
+
+						oNear.style.left=arr[obj.index].left+'px';
+						oNear.style.top=arr[obj.index].top+'px';
+						var car;
+						car=oNear.index;
+						oNear.index=obj.index;
+						obj.index=car;
+
+					}else{
+						//恢复默认位置
+						obj.style.left=arr[obj.index].left+'px';
+						obj.style.top=arr[obj.index].top+'px';
+					}
+				};
+				return false;
+			}
+		}
+		//碰撞检测
+		function collTest(obj,obj2){
+			var l=obj.offsetLeft;
+			var r=obj.offsetLeft+obj.offsetWidth;
+			var t=obj.offsetTop;
+			var b=obj.offsetTop+obj.offsetHeight;
+			var l2=obj2.offsetLeft;
+			var r2=obj2.offsetLeft+obj2.offsetWidth;
+			var t2=obj2.offsetTop;
+			var b2=obj2.offsetTop+obj2.offsetHeight;
+
+			if(l<r2 && r>l2 && t<b2 && b>t2){
+				return true;
+			}else{
+				return false;
+			}
+		}
+		//求距离
+		function dis(obj,obj2){
+			var a=obj2.offsetLeft-obj.offsetLeft;
+			var b=obj2.offsetTop-obj.offsetTop;
+
+			return Math.sqrt(a*a+b*b);
+		}
+		//求最近位置的元素
+		function findNear(obj){
+			var iMin=999999999999999;
+			var iMinIndex=-1;
+
+			for(var i=0;i<aIcon.length;i++){
+				if(obj==aIcon[i])continue;
+				if(collTest(obj,aIcon[i])){
+					var dis1=dis(obj,aIcon[i]);
+					if(dis1<iMin){
+						iMin=dis1;
+						iMinIndex=i;
+					}
+				}
+			}
+			if(iMinIndex==-1){
+				return null;
+			}else{
+				return aIcon[iMinIndex];
+			}
+		}
+	}
+</script>
+</head>
+
+<body>
+
+<div id="iphone">
+	<div id="wrap">
+		<ul class="bg">
+			<li class="bg-img" style="background:url(images/pic1.png); color: #f1f1f1;position: relative;" >
+				<i style="position: absolute;bottom: 35px;left: 95px;font-size: 18px;">向左滑动</i>
+			</li>
+			<li class="bg-img"  style="background:url(images/pic2.png);">
+				<ul id="icon-box" class="clearfix">
+					<li class="icon"><img src="images/finder.png" ></li>
+					<li class="icon" ><img src="images/safari.png"></li>
+					<li class="icon"><img src="images/mail.png"></li>
+					<li class="icon"><img src="images/contacts.png"></li>
+					<li class="icon"><img src="images/notes.png"></li>
+					<li class="icon"><img src="images/reminders.png"></li>
+					<li class="icon"><img src="images/maps.png"></li>
+					<li class="icon"><img src="images/photos.png"></li>
+					<li class="icon"><img src="images/messages.png" ></li>
+					<li class="icon"><img src="images/facetime.png"></li>
+					<li class="icon"><img src="images/pages.png"></li>
+					<li class="icon"><img src="images/numbers.png"></li>
+					<li class="icon"><img src="images/keynote.png"></li>
+					<li class="icon"><img src="images/music.png"></li>
+					<li class="icon"><img src="images/ibooks.png"></li>
+				</ul>
+			</li>
+			<li  class="bg-img" style="background:url(images/pic3.png);"></li>
+			<li  class="bg-img" style="background:url(images/pic4.png);"></li>
+		</ul>
+	</div>
+</div>
+
+</body>
+</html>

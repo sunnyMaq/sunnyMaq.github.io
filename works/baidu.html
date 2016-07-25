@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        *{margin: 0;padding: 0;list-style: none}
+        a{text-decoration: none;color: white;}
+        .box{width: 500px;margin: 100px auto;position: relative;}
+        .box img{width: 270px;height: 129px;position: absolute;left: 50%;margin-left: -135px;}
+        .search{width: 652px;height:100%;position: relative;top:150px;left: 50%;margin-left: -326px;}
+        .search input{width: 550px;height: 40px;}
+        .search a{width: 100px;height: 44px;background: deepskyblue;display: inline-block;line-height: 40px;text-align: center;position: absolute;right: 0;}
+        .list{width: 551px;border: 1px solid #ccc;display: none;position: absolute;left:50%;margin-left: -326px;top:195px; }
+        .list li{width:551px;height: 30px;text-indent: 5px;line-height: 30px;font-size: 16px;}
+        .list li.ac{background: gainsboro;width: 551px;}
+    </style>
+    <script src="jsonp.js"></script>
+    <script>
+        window.onload=function(){
+            var oUl=document.getElementById('oul');
+            var oT=document.getElementById('txt');
+            var oBtn=document.getElementById('btn');
+            var iNow=-1;
+            var oldValue='';
+
+            oT.onkeyup=function(ev){
+                var oEvent=ev || event;
+                if(oEvent.keyCode==38 || oEvent.keyCode==40)return;
+                jsonp({
+                    url:'https://sp0.baidu.com/5a1Fazu8AA54nxGko9WTAnF6hhy/su',
+                    data:{
+                        wd:oT.value
+                    },
+                    fnSucc:function(data){
+                        oUl.style.display='block';
+                        oUl.innerHTML='';
+                        var arr=data.s;
+                        for(var i = 0;i<arr.length;i++){
+                            var oLi=document.createElement('li');
+                            oLi.innerHTML=arr[i];
+                            oUl.appendChild(oLi)
+                        }
+
+                    }
+                })
+                oldValue=oT.value;
+            };
+            oBtn.onclick=function(){
+                if(oT.value==''){
+                    window.location.reload();
+                }else {
+                    window.open('https://www.baidu.com/s?ie=utf-8&f=3&rsv_bp=0&rsv_idx=1&tn=baidu&wd='+oT.value+'','_self')
+                }
+            }
+            oUl.onmouseover=function(){
+                var aLi=oUl.children;
+                for(var i = 0;i<aLi.length;i++){
+                    aLi[i].onmouseover=function(){
+                        for(var j = 0;j<aLi.length;j++){
+                            aLi[j].className='';
+                        }
+                        this.className='ac';
+                    };
+
+                    aLi[i].onclick=function(){
+                        for(var j = 0;j<aLi.length;j++){
+                            aLi[j].className='';
+                        }
+                        this.className='ac';
+                        oT.value=this.innerHTML;
+                        window.open('https://www.baidu.com/s?ie=utf-8&f=3&rsv_bp=0&rsv_idx=1&tn=baidu&wd='+oT.value+'','_self')
+                    }
+                }
+            }
+            oT.onkeydown=function(ev){
+                var oEvent= ev || event;
+                var aLi=oUl.children;
+                if(oEvent.keyCode==13){
+                    window.open('https://www.baidu.com/s?ie=utf-8&f=3&rsv_bp=0&rsv_idx=1&tn=baidu&wd='+oT.value+'','_self')
+                }
+
+                if(oEvent.keyCode==38){
+                    //向上
+                    iNow--;
+                    if(iNow==-2)iNow=aLi.length-1;
+                    console.log(iNow);
+                    for(var i = 0;i<aLi.length;i++){
+                        aLi[i].className='';
+                    }
+                    if(iNow==-1){
+                        oT.value=oldValue;
+                    }else {
+                        oT.value=aLi[iNow].innerHTML;
+                        aLi[iNow].className='ac';
+                    }
+                }
+                if(oEvent.keyCode==40){
+                    //向下i
+                    iNow++;
+                    if(iNow==aLi.length)iNow=-1;
+                    for(var i=0;i<aLi.length;i++){
+                        aLi[i].className='';
+                    }
+                    if(iNow==-1){
+                        oT.value=oldValue
+                    }else {
+                        aLi[iNow].className='ac';
+                        oT.value=aLi[iNow].innerHTML;
+                    }
+
+                }
+            }
+            oT.onblur=function(){
+                if(oUl.children.length==0){
+                    oUl.style.display='none';
+                }
+            }
+        }
+    </script>
+</head>
+<body>
+<div id="box" class="box">
+    <img src="img/bd_logo.png">
+    <div id="search" class="search">
+        <input type="text" id="txt">
+        <a href="javascript:;" id="btn">百度一下</a>
+    </div>
+    <ul id="oul" class="list" style="border-top: none">
+        <!--<li>aaa</li>-->
+    </ul>
+</div>
+</body>
+</html>

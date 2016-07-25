@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        *{margin: 0;padding: 0}
+        .box{width: 400px;height: 399px;background: url("img/clock.png");margin: 100px auto;position: relative}
+        .box span{position: absolute;left: 50%;top:50%;background: #000;transform-origin: bottom center}
+        .hou{width: 10px;height: 80px;margin-left: -5px;margin-top: -80px;}
+        .min{width: 8px;height: 100px;margin-left: -4px;margin-top: -100px}
+        .sen{width: 4px;height: 120px;margin-left: -2px;margin-top: -120px;}
+        .box i{width: 20px;height: 20px;border-radius: 50%;position: absolute;left: 50%;top:50%;margin-top: -10px;margin-left: -10px;background: #000}
+    </style>
+    <script>
+        window.onload=function(){
+            var oSpan=document.querySelectorAll('span');
+            function clock(){
+                var oDate=new Date();
+                var oH=oDate.getHours();
+                var oM=oDate.getMinutes();
+                var oS=oDate.getSeconds();
+                var oMs=oDate.getMilliseconds();
+
+                oSpan[0].style.transform='rotate('+(oH*30+oM/60*30)+'deg)';
+                oSpan[1].style.transform='rotate('+(oM*6+oS/60*6)+'deg)';
+                oSpan[2].style.transform='rotate('+(oS*6)+'deg)'
+            }
+            clock();
+            setInterval(clock,30)
+        }
+    </script>
+</head>
+<body>
+    <div class="box">
+        <i></i>
+        <span class="hou"></span>
+        <span class="min"></span>
+        <span class="sen"></span>
+    </div>
+</body>
+</html>

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>MacBook</title>
+    <style>
+        *{margin: 0;padding: 0;list-style: none;}
+        body{background: gainsboro}
+        .mac{width: 980px;height: 570px;background: url("img/mac-bg.png");margin: 50px auto}
+       .nav{width:980px;height:45px;position: absolute;left:50%;margin-left:-490px;bottom: 113px;text-align: center;_background:rgba(76,121,98,0.6);line-height: 45px }
+    </style>
+    <script src="../js/fnJs.js"></script>
+    <script>
+        window.onload= function () {
+            var oBox=document.getElementById('nav');
+            var aImg=oBox.children;
+
+            document.onmousemove=function(ev){
+                var oEvent=ev || event;
+
+                for(var i = 0;i<aImg.length;i++){
+                    var a=getPos(aImg[i]).left+ aImg[i].offsetWidth/2-oEvent.clientX;
+                    var b=getPos(aImg[i]).top+getPos(oBox).top+aImg[i].offsetHeight/2-oEvent.clientY;
+                    var c=Math.sqrt(a*a+b*b);
+
+                    var scale=1-c/400;
+                    (scale<=.5) && (scale=.5);
+                    aImg[i].style.width=50*scale+'px';
+                }
+            }
+        }
+    </script>
+</head>
+<body>
+<div class="mac">
+<div class="nav" id="nav">
+    <img src="img/finder.png" width="30">
+    <img src="img/safari.png" width="30">
+    <img src="img/mail.png" width="30">
+    <img src="img/contacts.png" width="30">
+    <img src="img/notes.png" width="30">
+    <img src="img/reminders.png" width="30">
+    <img src="img/maps.png" width="30">
+    <img src="img/photos.png" width="30">
+    <img src="img/messages.png" width="30">
+    <img src="img/facetime.png" width="30">
+    <img src="img/pages.png" width="30">
+    <img src="img/numbers.png" width="30">
+    <img src="img/keynote.png" width="30">
+    <img src="img/music.png" width="30">
+    <img src="img/ibooks.png" width="30">
+</div>
+</div>
+</body>
+</html>

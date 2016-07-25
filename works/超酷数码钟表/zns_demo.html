@@ -1,0 +1,83 @@
+﻿<!doctype html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>超酷数码钟表 - 智能社 - www.zhinengshe.com</title>
+<link href="style/zns_style.css" rel="stylesheet" type="text/css" />
+</head>
+<script>
+    function toDou(n){
+        return n<10 ? '0'+n:''+n;
+    }
+    window.onload=function(){
+        var oYear=document.getElementById('year');
+        var aImgYear=oYear.getElementsByTagName('img');
+        var oTime=document.getElementById('time');
+        var aImgTime=oTime.getElementsByTagName('img');
+
+        function coolClock(){
+            var oDate=new Date();
+            var y=oDate.getFullYear();
+            var m=oDate.getMonth();
+            var d=oDate.getDate();
+            var w=oDate.getDay();
+            var h=oDate.getHours();
+            var mi=oDate.getMinutes();
+            var s=oDate.getSeconds();
+            var str1=toDou(h)+':'+toDou(mi)+':'+toDou(s)+':'+w;
+            var str2=y+'-'+toDou(m+1)+'-'+toDou(d)+'-';
+            var week=['one','two','three','four','five','six','seven'];
+            for(var i = 0;i<aImgTime.length;i++){
+            if (str1.charAt(i)==':'){
+                continue;
+            }
+            aImgTime[i].src='images/'+str1.charAt(i)+'.png';
+            if (i==aImgTime.length-1){
+                aImgTime[i].src='images/'+week[w]+'.png';
+            }
+        }
+            for(var i = 0;i<aImgYear.length;i++){
+                if (str2.charAt(i)=='-'){
+                    continue;
+                }
+                aImgYear[i].src='images/'+str2.charAt(i)+'.png';
+            }
+        }
+        coolClock();
+        setInterval(coolClock,1000)
+
+
+    }
+</script>
+<body>
+
+<div id="clock" class="date">
+    <div class="year" id="year">
+        <img class="num" src="images/0.png" alt="0" />
+        <img class="num" src="images/0.png" alt="0" />
+        <img class="num" src="images/0.png" alt="0" />
+        <img class="num" src="images/0.png" alt="0" />
+        <img src="images/year.png" alt="year" />
+        <img class="num" src="images/0.png" alt="0" />
+        <img class="num" src="images/0.png" alt="0" />
+        <img src="images/month.png" alt="month" />
+        <img class="num" src="images/0.png" alt="0" />
+        <img class="num" src="images/0.png" alt="0" />
+        <img src="images/seven.png" alt="seven" />
+    </div>
+    <div class="time" id="time">
+        <img class="num" src="images/0.png" alt="0" />
+        <img class="num" src="images/0.png" alt="0" />
+        <img src="images/sign.png" alt="sign" />
+        <img class="num" src="images/0.png" alt="0" />
+        <img class="num" src="images/0.png" alt="0" />
+        <img src="images/sign.png" alt="sign" />
+        <img class="num" src="images/0.png" alt="0" />
+        <img class="num" src="images/0.png" alt="0" />
+        <img class="pos2" src="images/week.png" alt="week" />
+        <img class="num2" src="images/one.png" alt="one" />
+    </div>
+</div>
+
+</body>
+</html>

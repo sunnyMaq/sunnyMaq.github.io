@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        *{margin: 0;padding: 0;list-style: none;}
+        #box{width: 750px;height: 160px;overflow: hidden;margin: 100px auto;position: relative}
+        #big{width: 612px;height: 160px;top:0;left: 0;position: relative}
+        #big ul{position: absolute;top:0;left: 0;}
+        #big li{width: 612px;height: 160px;}
+        #small{width: 125px;height:160px;position: absolute;left: 620px;top:0; }
+        #small li{width: 113px;height: 42px;border: 4px solid #ccc;}
+        #small span{display:block;z-index: 999;width: 113px;height: 42px;opacity: 0.4;filter: alpha(opacity=40);background: gray;position: absolute}
+    </style>
+    <script src="move.js"></script>
+    <script>
+        window.onload=function(){
+            var oBox=document.getElementById('box');
+            var oBig=document.getElementById('big');
+            var oSma=document.getElementById('small');
+            var oSimg=oSma.getElementsByTagName('li');
+            var oBimg=oBig.getElementsByTagName('li');
+            var oSha=oSma.getElementsByTagName('span');
+            var timer='';
+            var iNow=0;
+           // alert(oSha.length)
+
+            for(var i = 0;i<oSimg.length;i++){
+                ;(function(index){
+                    oSimg[i].onmouseover=function(){
+                        clearInterval(timer);
+                        for(var j = 0;j<oSimg.length;j++){
+                            oSha[j].style.display='block';
+                        }
+                        oSha[index].style.display='none';
+                        move(oBig,{top:-index*(oBig.offsetHeight)})
+                    }
+                    oSimg[i].onmouseout=function(){
+                        autoPlay();
+                    }
+                })(i);
+            }
+            function autoPlay(){
+                timer=setInterval(function(){
+                    iNow++;
+                    if(iNow>=oSimg.length){
+                        iNow=0;
+                    }
+                    for(var j = 0;j<oSimg.length;j++){
+                        oSha[j].style.display='block';
+                    }
+                    oSha[iNow].style.display='none';
+                    move(oBig,{top:-iNow*(oBig.offsetHeight)})
+                },2000)
+            }
+            autoPlay();
+            
+        }
+    </script>
+</head>
+<body>
+<div id="box">
+    <div id="big">
+        <ul>
+            <li><img src="img/1.JPG"></li>
+            <li><img src="img/2.JPG"></li>
+            <li><img src="img/3.JPG"></li>
+        </ul>
+    </div>
+    <div id="small">
+        <ul>
+            <li><span style="display: none"></span><img src="img/s1.JPG"></li>
+            <li style="margin: 5px 0"><span></span><img src="img/s2.JPG"></li>
+            <li><span></span><img src="img/s3.JPG"></li>
+        </ul>
+    </div>
+</div>
+</body>
+</html>

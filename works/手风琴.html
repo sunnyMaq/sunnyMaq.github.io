@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        *{margin: 0;padding: 0;list-style: none;}
+        #oul{width: 620px;height: 300px;margin: 100px auto;position: relative;overflow: hidden}
+        #oul li{width: 620px;height: 300px;position: absolute;left: 0;top:0;}
+        #oul img{width: 500px;height: 300px;}
+    </style>
+    <script src="move6.js"></script>
+    <script>
+        window.onload=function(){
+            var oUl=document.getElementById('oul');
+            var oLi=oUl.children;
+            var oW=620;
+            var oW1=30;
+
+            for(var i = 1;i<oLi.length;i++){
+                oLi[i].style.left=oW-(oLi.length-i)*oW1+'px';
+            }
+            for(var i = 0;i<oLi.length;i++){
+                (function(index){
+                    oLi[i].onmouseover=function(){
+                        for(var i = 0;i<oLi.length;i++){
+                            if(index>=i){
+                                //oLi[i].style.left=i*oW1+'px';
+                                move(oLi[i],{left:i*oW1})
+                            }else {
+                               // oLi[i].style.left=oW-(oLi.length-i)*oW1+'px';:
+                                move(oLi[i],{left:oW-(oLi.length-i)*oW1})
+                            }
+                        }
+                    };
+
+                })(i);
+            }
+        }
+    </script>
+</head>
+<body>
+<ul id="oul">
+    <li><img src="img/1.jpg" ></li>
+    <li><img src="img/2.jpg"></li>
+    <li><img src="img/3.jpg"></li>
+    <li><img src="img/4.jpg"></li>
+    <li><img src="img/5.jpg"></li>
+</ul>
+</body>
+</html>
