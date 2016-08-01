@@ -1,9 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="7dab0330-d9a6-47f9-95e7-aa727cbaf193" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/work/myWish/index.html" afterPath="$PROJECT_DIR$/work/myWish/index.html" />
-    </list>
+    <list default="true" id="7dab0330-d9a6-47f9-95e7-aa727cbaf193" name="Default" comment="" />
     <ignored path="sunnyMaq.github.io.iws" />
     <ignored path=".idea/workspace.xml" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
