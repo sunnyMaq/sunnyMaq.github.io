@@ -24,7 +24,7 @@ window.onload=function(){
         aJs_block_li[i].onmouseenter=function(ev){
             var oEvent=ev || event;
             var n=hoverDir(this, oEvent);
-            console.log(n);
+            //console.log(n);
             var oSpan=this.children[0];
             switch(n){
                 case 0:
