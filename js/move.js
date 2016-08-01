@@ -1,53 +1,72 @@
 /**
- * Created by lianx on 2016/5/25.
+ * Created by ijiajia on 2016/6/13.
  */
-function getClass(obj,name){
-    return (obj.currentStyle || getComputedStyle(obj,false))[name]
+function getStyle(obj, name){
+    return (obj.currentStyle || getComputedStyle(obj, false))[name];
 }
-function move(obj,json,options){
-    clearInterval(obj.timer);
-    options=options ||{};
-    options.time=options.time || 800;
-    options.type=options.type || 'ease-out';
+function move(obj, json, options){
+    var options=options || {};
+    options.duration=options.duration || 800;
+    options.easing=options.easing || 'ease-out';
 
-    var n=0;
-    var cs=parseInt(options.time/30);
     var start={};
     var dis={};
     for(var name in json){
-        start[name]=parseFloat(getClass(obj,name));
+        start[name]=parseFloat(getStyle(obj, name));
         dis[name]=json[name]-start[name];
     }
-    //console.log(json[name])
-
+    var count=Math.floor(options.duration/30);
+    var n=0;
+    clearInterval(obj.timer);
     obj.timer=setInterval(function(){
         n++;
-        for(var name in json) {
-            switch (options.type){
+
+        for(var name in json){
+            switch(options.easing){
                 case 'linear':
-                    var a=n/cs;
-                    var tmp=start[name]+ dis[name]*a ;
+                    var a=n/count;
+                    var cur=start[name]+dis[name]*a;
                     break;
                 case 'ease-in':
-                    var a=n/cs;
-                    var tmp=start[name]+ dis[name]*a*a*a ;
+                    var a=n/count;
+                    var cur=start[name]+dis[name]*a*a*a;
                     break;
                 case 'ease-out':
-                    var a=1-n/cs;
-                    var tmp=start[name]+ dis[name]*(1-a*a*a);
+                    var a=1-n/count;
+                    var cur=start[name]+dis[name]*(1-a*a*a);
                     break;
             }
 
-            if (name == 'opacity') {
-                obj.style.opacity =tmp;
-                obj.style.filter = 'alpha(opacity=' + tmp* 100 + ')';
-            } else {
-                obj.style[name] = tmp+ 'px';//name是变量，所以需要用中括号接收。
+            if(name=='opacity'){
+                obj.style.opacity=cur;
+                obj.style.filter='alpha(opacity='+cur*100+')';
+            }else{
+                obj.style[name]=cur+'px';
             }
         }
-        if(n==cs){
+
+        if(n==count){
             clearInterval(obj.timer);
-            options.end && options.end();
+            options.complete && options.complete();
         }
-    },30);
+    }, 30);
 }
+;(function(window){
+    var left=0;
+    var iSpeed=0;   // 速度
+    var timer;
+    window.elastic=function(obj, iTarget){
+        clearInterval(timer);
+        timer=setInterval(function(){
+            iSpeed+=(iTarget-left)/5;
+            iSpeed*=0.8;
+            left+=iSpeed;
+
+            obj.style.left=Math.round(left)+'px';
+            // 关闭定时器
+            if(Math.abs(iSpeed)<1 && Math.round(left)==iTarget){
+                clearInterval(timer);
+            }
+        }, 30);
+    }
+})(window);

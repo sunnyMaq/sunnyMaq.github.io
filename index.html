@@ -1,33 +1,290 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="zh-CN">
 <head>
-    <meta charset="UTF-8">
-    <title>sunny'seit</title>
-    <link href="css/style.css" type="text/css" rel="stylesheet">
+    <meta charset="utf-8">
+    <title>马晴晴个人简历-web前端工程师</title>
+    <meta name="keywords" content="马晴晴,马晴晴简历,web前端,web前端简历,web前端工程师,web前端招聘" />
+    <meta name="description" content="马晴晴的个人简历，职业web前端工程师。有意者" />
+    <link rel="stylesheet" href="css/style.css"/>
+    <link rel="stylesheet" href="css/base.css">
+    <script src="js/jquery-1.11.3.min.js"></script>
+    <script src="js/jquery.mousewheel.min.js"></script>
+    <script src="js/ddfullscreenslider.js"></script>
     <script src="js/move.js"></script>
-    <script src="js/index-js.js"></script>
+    <script src="js/index.js"></script>
+    <script src="js/work.js"></script>
 </head>
+<!--[if lt IE 9]>
+<script>
+    !function(body) {
+        body.style.width = body.style.height = '100%';
+        body.parentNode.style.overflow = body.style.overflow = 'hidden';
+    }(document.body);
+</script>
+<iframe src="40ie.html" frameborder="0" scrolling="no" style="position: absolute; width: 100%; height: 100%; left: 0; top: 0; z-index: 99999;"></iframe>
+<![endif]-->
 <body>
-<!--头部-->
-<header >
-    <div id="nav-bg"></div>
-    <ul id="nav">
-        <li><a href="about.html">About</a></li>
-        <li><a href="works.html">Projects</a></li>
-        <li><a href="index.html">Intro</a></li>
-    </ul>
-</header>
-<!--头部结束-->
-<div class="main">
-    <div class="bg">
-        <img src="img/home.jpg">
+<section id="dowebok" class="dd_fullscreenslider">
+    <div class="slidewrapper">
+        <article class="slide">
+            <div class="about">
+                <div class="photo">
+                </div>
+
+                <div class="person_info">
+                    <h2>马晴晴 <br/>
+                        <small>web前端工程师</small></h2>
+                    <p>出生日期：1991年9月</p>
+                    <p>电话：18310266003</p>
+                    <p>邮箱：<a href="mailto:yexiaoqing723@163.com">qing__sunny@126.com</a></p>
+                    <p>坐标：北京</p>
+                </div>
+
+            </div>
+        </article>
+
+        <article class="slide">
+            <div class="skill">
+                <div class="skill_text">
+                    <h2>不忘初心，从Web前端开始<br/>
+                        <small>精通布局，熟悉特效</small></h2>
+                </div>
+                <div class="skill_form">
+                    <ul>
+                        <li id="list1">
+                            <h4>HTML & CSS</h4>
+
+                            <div class="list1_detail">
+                                <ul>
+                                    <li>熟练HTML/XHTML、CSS，熟悉页面架构和布局，对Web标准和标签语义化有深入理解；</li>
+                                    <li>能够独立完成对设计页面进行网页代码输出；</li>
+                                    <li>能适当运用CSS3使页面在现代浏览器上效果更佳；</li>
+                                    <li>熟悉W3C标准，熟悉主流浏览器兼容性</li>
+                                </ul>
+                            </div>
+                        </li>
+                        <li id="list2">
+                            <h4>Javascript</h4>
+                            <div class="list2_detail">
+                                <ul>
+                                    <li>对JavaScript基础知识的熟练掌握，包括基本语法以及DOM操作；</li>
+                                    <li>熟练掌握Ajax/JSON，有跨域应用的经验</li>
+                                    <li>熟悉JavaScript 面向对象编程的思想。</li>
+                                </ul>
+                            </div>
+                        </li>
+
+                        <li id="list3">
+                            <h4>Html5 & CSS3</h4>
+                            <div class="list3_detail">
+                                <ul>
+                                    <li>深入理解H5语义化标记的含义；</li>
+                                    <li>对CSS3新特性有较深的理解和应用；</li>
+                                    <li>熟悉canvas画图。</li>
+                                </ul>
+                            </div>
+                        </li>
+                        <li id="list4">
+                            <h4>PhotoShop</h4>
+                            <div class="list4_detail">
+                                <ul>
+                                    <li>能熟练进行图片处理和简单平面设计；</li>
+                                    <li>能根据图片特征存成最优的格式。</li>
+                                </ul>
+                            </div>
+                        </li>
+                        <li id="list5">
+                            <h4>PHP & Node.js</h4>
+                            <div class="list5_detail">
+                                <ul>
+                                    <li>了解PHP、Node.js的基本语法。 </li>
+                                </ul>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </article>
+
+        <article class="slide">
+            <div class="demo">
+                <div class="demo_title">
+                    <h2>练习案例</h2>
+                </div>
+                <ul class="js_block clearfix" id="js_block">
+                    <li class="one">
+                        <span>
+                            <i class="js_title">奥运会倒计时</i><br>
+                            <i class="js_dis">用Date对象和定时器实现倒计时效果</i>
+                            <a href="work/countdown.html" target="_blank"></a>
+                        </span>
+                        <img src="images/countdown.jpg">
+                    </li>
+                    <li class="three">
+                        <span>
+                             <i class="js_title">小米官网</i><br>
+                            <i class="js_dis">运用html&css，实现界面布局，并解决兼容问题。</i>
+                             <a href="work/mi/index.html" target="_blank"></a>
+                        </span>
+                        <img src="images/mi.jpg">
+                    </li>
+                    <li class="four">
+                        <span>
+                             <i class="js_title">聚划算手机端</i><br>
+                            <i class="js_dis">用rem布局实现页面布局，运用ajax技术实现热卖排行数据。</i>
+                            <a href="work/jhs/index.html" target="_blank"> </a>
+                        </span>
+                        <img src="images/jhs.jpg">
+                    </li>
+                    <li class="two">
+                        <span>
+                            <i class="js_title">模拟百度搜索</i><br>
+                            <i class="js_dis">运用jsonp技术，实现跨域请求。</i>
+                            <a href="work/baidu.html" target="_blank"></a>
+                        </span>
+                        <img src="images/baidu.jpg">
+                    </li>
+                    <li class="seven">
+                       <span>
+                            <i class="js_title">许愿墙</i><br>
+                            <i class="js_dis">运用ajax技术，实现不重载页面的情况下与Web服务器交换数据。</i>
+                            <a href="work/myWish/index.html" target="_blank"></a>
+                        </span>
+                        <img src="images/wish.jpg">
+                    </li>
+                    <li class="eight">
+                        <span>
+                            <i class="js_title">3D旋转魔方</i><br>
+                            <i class="js_dis">运用h5&css3实现页面布局和效果。</i>
+                            <a href="work/3D立体旋转魔方.html" target="_blank"></a>
+                        </span>
+                        <img src="images/3dmf.jpg">
+                    </li>
+                    <li class="six">
+                        <span>
+                            <i class="js_title">3D爆炸效果</i><br>
+                            <i class="js_dis">运用h5&css3、js实现页面布局和特效。</i>
+                            <a href="work/爆炸效果.html" target="_blank"></a>
+                        </span>
+                        <img src="images/bz.jpg">
+                    </li>
+                    <li class="five">
+                        <span>
+                            <i class="js_title">3D图片环</i><br>
+                            <i class="js_dis">运用h5&css3实现页面布局，运用js实现拖拽和运动。</i>
+                            <a href="work/3d图片环.html" target="_blank"></a>
+                        </span>
+                        <img src="images/3d.jpg">
+                    </li>
+                </ul>
+            </div>
+        </article>
+
+        <article class="slide">
+            <div class="Education">
+                <div class="Education_title">
+                    <h2>大学生活改变了我</h2>
+                    <h2>学的不仅是技术，还有思维</h2>
+                </div>
+                <div class="Education_detail">
+                    <ul >
+                        <li id="major1" >
+
+                            <div id="myMajor1">2011年9月-2014年7月</div>
+                            <div id="myMajor2">保定学院</div>
+                            <div id="myMajor3">电子商务</div>
+                            <div id="myMajor4">大专</div>
+
+                        </li>
+
+                        <li id="major2"  >
+                            <img src="images/C++.jpg" alt="c++基础知识"/>
+                            <h3>C++基础知识</h3>
+                            <p>基本掌握C++的程序设计方法，并初步具备使用C++开发应用程序和解决实际问题的能力。</p>
+                        </li>
+
+                        <li id="major3" >
+                            <img src="images/asp.jpg" alt="asp.net基础知识"/>
+                            <h3>ASP.NET基础知识</h3>
+                            <p >主要学习了网页布局、ASP.NET常用控件、ASP.NET AJAX、基于角色的安全技术、C#语法基础与程序设计方法等知识。</p>
+                        </li>
+
+                        <li id="major4">
+                            <img src="images/sql.jpg" alt="SQL基础知识"/>
+                            <h3>SQL Server基础知识</h3>
+                            <p>主要学习了SQL Server的各种功能、数据库系统设计方法 、维护及管理以及数据库系统开发应用的相关技术。</p>
+                        </li>
+
+                    </ul>
+                </div>
+            </div>
+        </article>
+
+        <article class="slide">
+            <div class="work_list">
+                <div class="work_list_title">
+                    <h2>两年工作经验，互联网行业</h2>
+                </div>
+                <div class="work_list_contain">
+                    <div class="work_list_point">
+                        <div class="work_list_point_bar"></div>
+                        <h4>现在</h4>
+                    </div>
+
+                    <div class="work_list_detail">
+                        <div class="company_name">
+                            <img  src="images/hk.jpg" alt="好课优学" />
+                            <p><strong>北京好课优学科技有限公司——运营编辑兼Web前端</strong></p>
+                        </div>
+                        <div class="company_job">
+
+                            <ul >
+                                <li>负责公司品牌官网策划，建设，维护以及推广工作。</li>
+                                <li>负责部门团队建设，管理、激励员工（SEO专员1名，网络推广1名，自媒体1名，文案1名，媒介1名），实施绩效考核，提升绩效水平。</li>
+                                <li>使用EditPlus代码编辑工具，配合Chrome、firebug辅助工具对官网移动端及PC端手机类目web页面开发工作。</li>
+                                <li>利用博阅手机官网模板代码进行修改，重新构建博阅教育官网模块，并使用jQuery插件，实现页面效果，提高用户体验。</li>
+
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="work_list_point">
+                        <div class="work_list_point_bar"></div>
+                        <p>2014年11月</p>
+                    </div>
+
+                    <div class="work_list_detail">
+                        <div class="company_name">
+                            <img  src="images/ydc.jpg" alt="北京易得彩" />
+                            <p><strong>北京博易通联科技有限责任公司——运营编辑</strong></p>
+                        </div>
+                        <div class="company_job">
+
+                            <ul >
+                                <li>负责网站的SEO及网站性能优化，包括meta标签、图片及链接的优化等。</li>
+                                <li>负责相关频道内容采编策划，完成栏目的每日内容更新工作</li>
+                                <li>负责网站，微博，微信的线上推广工作。</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="work_list_point">
+                        <div class="work_list_point_bar"></div>
+                        <h4>2014年3月</h4>
+                    </div>
+                </div>
+            </div>
+        </article>
+
+        <article class="slide" >
+            <div class="thank">
+                <div class="thank_text">
+                    <h2>致谢</h2>
+                    <p>非常感谢您花时间阅读我的简历，期待有机会和您共事!</p>
+                </div>
+            </div>
+        </article>
     </div>
-    <div id="welcome">
-        <span id="hi">Sunny's website</span>
-        <div id="con">
-        </div>
-        <div id="pro"><a href="works.html"><em>My Projects →</em></a></div>
-    </div>
-</div>
+</section>
 </body>
 </html>
