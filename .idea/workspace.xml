@@ -2,7 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="7dab0330-d9a6-47f9-95e7-aa727cbaf193" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/images/countdown.jpg" afterPath="$PROJECT_DIR$/images/countdown.jpg" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/work/myWish/index.html" afterPath="$PROJECT_DIR$/work/myWish/index.html" />
     </list>
     <ignored path="sunnyMaq.github.io.iws" />
@@ -27,11 +26,23 @@
       <file leaf-file-name="index.html" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/work/myWish/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-4.681818">
-              <caret line="5" column="48" selection-start-line="5" selection-start-column="48" selection-end-line="5" selection-end-column="48" />
+            <state vertical-scroll-proportion="0.54545456">
+              <caret line="218" column="67" selection-start-line="218" selection-start-column="67" selection-end-line="218" selection-end-column="67" />
               <folding>
-                <marker date="1470050505893" expanded="true" signature="2603:2755" placeholder="..." />
-                <marker date="1470050505893" expanded="true" signature="2866:2990" placeholder="..." />
+                <marker date="1470051046417" expanded="true" signature="2603:2755" placeholder="..." />
+                <marker date="1470051046417" expanded="true" signature="2866:2990" placeholder="..." />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="index.html" pinned="false" current-in-tab="false">
+        <entry file="file://F:/wamp/www/6-6/myWish/index.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-7.4117646">
+              <caret line="163" column="67" selection-start-line="163" selection-start-column="67" selection-end-line="163" selection-end-column="67" />
+              <folding>
+                <marker date="1465033802205" expanded="true" signature="6965:7034" placeholder="..." />
               </folding>
             </state>
           </provider>
@@ -263,13 +274,23 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://F:/wamp/www/6-6/myWish/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-7.4117646">
+          <caret line="163" column="67" selection-start-line="163" selection-start-column="67" selection-end-line="163" selection-end-column="67" />
+          <folding>
+            <marker date="1465033802205" expanded="true" signature="6965:7034" placeholder="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/work/myWish/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-4.681818">
-          <caret line="5" column="48" selection-start-line="5" selection-start-column="48" selection-end-line="5" selection-end-column="48" />
+        <state vertical-scroll-proportion="0.54545456">
+          <caret line="218" column="67" selection-start-line="218" selection-start-column="67" selection-end-line="218" selection-end-column="67" />
           <folding>
-            <marker date="1470050505893" expanded="true" signature="2603:2755" placeholder="..." />
-            <marker date="1470050505893" expanded="true" signature="2866:2990" placeholder="..." />
+            <marker date="1470051046417" expanded="true" signature="2603:2755" placeholder="..." />
+            <marker date="1470051046417" expanded="true" signature="2866:2990" placeholder="..." />
           </folding>
         </state>
       </provider>
