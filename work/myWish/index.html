@@ -158,7 +158,6 @@
         //添加表情
 
         for(var i=0;i<aImg.length;i++){
-            console.log(aImg[i].alt);
             aImg[i].onclick=function(){
                 oContent.value+='['+this.alt+']';
             }
@@ -188,10 +187,10 @@
 <div id='main'>
     <!--<dl class='paper a1'>-->
         <!--<dt>-->
-            <!--<span class='username'>智能社</span>-->
+            <!--<span class='username'>sunny</span>-->
             <!--<span class='num'>No.00001</span>-->
         <!--</dt>-->
-        <!--<dd class='content'>欢迎来到智能社</dd>-->
+        <!--<dd class='content'>hello world</dd>-->
         <!--<dd class='bottom'>-->
             <!--<span class='time'>今天08:30</span>-->
             <!--<a href="" class='close'></a>-->
@@ -227,11 +226,5 @@
         <span id='send-btn'></span>
     </form>
 </div>
-<!--[if IE 6]>
-<script type="text/javascript" src="./Js/iepng.js"></script>
-<script type="text/javascript">
-    DD_belatedPNG.fix('#send,#close,.close','background');
-</script>
-<![endif]-->
 </body>
 </html>
