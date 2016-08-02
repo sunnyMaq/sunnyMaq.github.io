@@ -1,0 +1,216 @@
+﻿<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>智能课堂 —— 微博ajax接口测试 - www.zhinengshe.com</title>
+<link href="css/weibo.css" rel="stylesheet" type="text/css" />
+<script src="ajax.js"></script>
+<script src="cookie.js"></script>
+<script>
+	window.onload=function(){
+		var oBtn=document.getElementById('btn1');
+		var oT=document.getElementById('t1');
+		var oBox=document.getElementById('msg_box');
+		var oPageBox=document.getElementById('page_box');
+		var nowPage=1;
+		//添加一条
+//		weibo.php?act=add&content=xxx	添加一条
+//		返回：{error:0, id: 新添加内容的ID, time: 添加时间}
+		var url='weibo.php';
+		oBtn.onclick=function(){
+			ajax({
+				url:url,
+				data:{
+					act:'add',
+					content:oT.value
+				},
+				fnSucc:function(str){
+					var json=new Function('return '+str)();
+					if(json.error){
+						alert('添加失败！')
+					}else{
+						var oDiv=createMsg(json.time,oT.value,0,0,json.id);
+						if(oBox.children.length){
+							oBox.insertBefore(oDiv,oBox.children[0])
+						}else{
+							oBox.appendChild(oDiv);
+						}
+						if(oBox.children.length==7){
+							oBox.removeChild(oBox.children[6]);
+						}
+
+					}
+					getPageCount();
+					oT.value='';
+				}
+			});
+		};
+		function createMsg(time,content,acc,ref,id){
+			var oDate=new Date();
+			oDate.setTime(time*1000);
+			var str=oDate.getFullYear()+'-'+(oDate.getMonth()+1)+'-'+oDate.getDate()+' '+oDate.getHours()+':'+oDate.getMinutes()+':'+oDate.getSeconds();
+			var oDiv=document.createElement('div');
+			oDiv.className='reply';
+			oDiv.innerHTML='<p class="replyContent">'+content+'</p>'
+					+'<p class="operation">'
+					+'<span class="replyTime">'+str+'</span>'
+					+'<span class="handle">'
+					+'<a href="javascript:;" class="top">'+acc+'</a>'
+					+'<a href="javascript:;" class="down_icon">'+ref+'</a>'
+					+'<a href="javascript:;" class="cut">删除</a>';
+					+'</span>'
+					+'</p>';
+//			weibo.php?act=del&id=12			删除一条数据
+//			返回：{error:0}
+			var aA=oDiv.getElementsByTagName('a');
+			//删除
+			aA[2].onclick=function(){
+				var t=confirm('你确认删除吗？');
+				if(t){
+					ajax({
+						url:url,
+						data:{
+							act:'del',
+							id:id
+						},
+						fnSucc:function(str){
+							var json=new Function('return '+str);
+
+							if(json.error){
+								alert('删除失败！')
+							}else{
+								oBox.removeChild(oDiv);
+								getPageCount();
+								getMsg(nowPage);
+
+							}
+						}
+					})
+				}
+			};
+//			weibo.php?act=acc&id=12			顶某一条数据
+//			返回：{error:0}
+
+			aA[0].onclick=function(){
+				if(!getCookie(('acc'+id))){
+					ajax({
+						url:url,
+						data:{
+							act:'acc',
+							id:id
+						},
+						fnSucc:function(str){
+							var json=new Function('return '+str)();
+							if(json.error){
+								alert('顶失败')
+							}else{
+								aA[0].innerHTML=parseInt(aA[0].innerHTML)+1;
+								setCookie('acc'+id,1,1);
+							}
+						}
+
+					})
+				}else{
+					alert('亲！一天只能顶一次吧！');
+				}
+
+			};
+
+
+
+			return oDiv;
+		}
+
+//		weibo.php?act=get&page=1		获取一页数据
+//		返回：[{id: ID, content: "内容", time: 时间戳, acc: 顶次数, ref: 踩次数}, {...}, ...]
+
+		function getMsg(n){
+			oBox.innerHTML='';
+			ajax({url:url,
+				data:{
+					act:'get',
+					page:n
+				},
+				fnSucc:function(str){
+					var arr=new Function('return '+str)();
+					for(var i=0;i<arr.length;i++){
+						var oDiv=createMsg(arr[i].time,arr[i].content,arr[i].acc,arr[i].ref,arr[i].id);
+
+						oBox.appendChild(oDiv);
+					}
+				}
+			})
+		}
+		getMsg();
+//		weibo.php?act=get_page_count	获取页数
+//		返回：{count:页数}
+		function getPageCount(){
+			oPageBox.innerHTML='';
+			ajax({
+				url:url,
+				data:{
+					act:"get_page_count"
+				},
+				fnSucc:function(str){
+					var num=new Function('return '+str)().count;
+					for(var i=0;i<num;i++){
+						var oA=document.createElement('a');
+						oA.href='javascript:;';
+						oA.innerHTML=i+1;
+						if(i==0){
+							oA.className='active';
+						}
+						oA.onclick=function(){
+							for(var i=0;i<oPageBox.children.length;i++){
+								oPageBox.children[i].className='';
+							}
+							this.className='active';
+							nowPage=this.innerHTML;
+							getMsg(this.innerHTML);
+						};
+						oPageBox.appendChild(oA);
+
+					}
+
+				}
+			});
+		}
+		getPageCount();
+	};
+</script>
+</head>
+
+<body>
+<div class="znsArea">
+<!--留言-->
+     <div class="takeComment">
+        <textarea name="textarea" class="takeTextField" id="t1"></textarea>
+        <div class="takeSbmComment">
+            <input type="button" class="inputs" value="" id="btn1"/>
+            <span>(可按 Enter 回复)</span>
+        </div>
+    </div>
+<!--已留-->
+    <div class="commentOn">
+        <div class="messList" id="msg_box">
+        	<!--<div class="reply">-->
+                <!--<p class="replyContent">卫士，新款卫士将推出总共14种车身式样。其中， XS旅行款车型售价为32295英镑(约33.6万元)。</p>-->
+                <!--<p class="operation">-->
+                    <!--<span class="replyTime">2011-09-08 16:37:60</span>-->
+                    <!--<span class="handle">-->
+                    	<!--<a href="javascript:;" class="top">0</a>-->
+                        <!--<a href="javascript:;" class="down_icon">0</a>-->
+                        <!--<a href="javascript:;" class="cut">删除</a>-->
+                    <!--</span>-->
+                <!--</p>-->
+            <!--</div>-->
+        </div>
+        <div class="page" id="page_box">
+        	<!--<a href="javascript:;" class="active">1</a>-->
+        	<!--<a href="javascript:;">2</a>-->
+        	<!--<a href="javascript:;">3</a>-->
+        </div>
+    </div>
+</div>
+</body>
+</html>

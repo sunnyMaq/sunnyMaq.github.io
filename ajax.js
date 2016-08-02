@@ -10,7 +10,7 @@ function setUrl(json){
 }
 function ajax(json){
 
-    json = json || {}
+    json = json || {};
     if(!json.url){
        return;
     }
