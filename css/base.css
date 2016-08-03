@@ -5,7 +5,7 @@ html.fssopen,html.fssopen body {
     left:0;
     margin:0;
 }
-body,div,p,h1,h2,h3,h4 {
+body,div,p,h1,h2,h3,h4,li,ul {
     font-family:"Microsoft YaHei",Microsoft JhengHei, Helvetica, STHeiti STXihei, Arial;
     font-weight:400;
     margin:0;
