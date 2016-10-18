@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="css/app.css" type="text/css">
+    <script src="js/jquery-1.7.2.js"></script>
+</head>
+<body>
+<!--header start-->
+    <div class="header">
+        <div class="nav">
+            <div class="logo fl">
+                <img src="img/logo.png">
+            </div>
+            <div class="menu fl">
+                <a href="http://pc.koalapass.com/Login/index.html">考拉必过网页版</a>
+                <a href="index.html">首页</a>
+                <a href="golden.html">超值活动</a>
+                <a href="javascript:;">校园合伙人</a>
+                <a href="javascript:;">常见问题</a>
+                <a href="feedback.html">意见反馈</a>
+            </div>
+        </div>
+    </div>
+    <script>
+        $(function(){
+            $('.menu a').click(function(){
+                $('.menu a').css('color','#333');
+                $(this).css('color','#999');
+            })
+        })
+    </script>
+<!--header end-->
+</body>
+</html>

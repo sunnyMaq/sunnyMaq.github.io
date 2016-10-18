@@ -1,308 +1,211 @@
 <!DOCTYPE html>
-<html lang="zh-CN">
+<html lang="en">
 <head>
-    <meta charset="utf-8">
-    <title>马晴晴个人简历-web前端工程师</title>
-    <meta name="keywords" content="马晴晴,马晴晴简历,web前端,web前端简历,web前端工程师,web前端招聘" />
-    <meta name="description" content="马晴晴的个人简历，职业web前端工程师。有意者" />
-    <link rel="stylesheet" href="css/style.css"/>
-    <link rel="stylesheet" href="css/base.css">
-    <script src="js/jquery-1.11.3.min.js"></script>
-    <script src="js/jquery.mousewheel.min.js"></script>
-    <script src="js/ddfullscreenslider.js"></script>
+    <meta charset="UTF-8">
+    <title>考拉必过APP官网</title>
+    <meta content="考拉必过,考研,公务员,教师资格,好课,大学生备考,好课网,网上辅导,在线学习,app学习" name="keywords" />
+    <meta content="考拉必过，一款让大学生轻松备考的APP。为你提供华图、智课网、新东方、中人教育的名师精品课，你只需要装一个APP，就可以轻松拥有全套课程，导学、基础、强化、冲刺、真题，全部囊括。公务员、考研、四六级、教师资格，通通拿下，一次考过！" name="description" />
+    <link rel="stylesheet" href="css/app2.css" type="text/css">
+    <style>
+        @media screen  and (max-width: 1920px){
+            html{font-size: 20px;}
+        }
+        @media screen  and (min-width: 750px) and (max-width: 1000px){
+            html{font-size: 16px;}
+        }
+        @media screen and (max-width: 750px){
+            html{font-size: 12px;}
+        }
+    </style>
+    <script src="js/jquery-1.7.2.js"></script>
     <script src="js/move.js"></script>
-    <script src="js/index.js"></script>
-    <script src="js/work.js"></script>
 </head>
-<!--[if lt IE 9]>
-<script>
-    !function(body) {
-        body.style.width = body.style.height = '100%';
-        body.parentNode.style.overflow = body.style.overflow = 'hidden';
-    }(document.body);
-</script>
-<iframe src="40ie.html" frameborder="0" scrolling="no" style="position: absolute; width: 100%; height: 100%; left: 0; top: 0; z-index: 99999;"></iframe>
-<![endif]-->
-<body>
-<section id="dowebok" class="dd_fullscreenslider">
-    <div class="slidewrapper">
-        <article class="slide">
-            <div class="about">
-                <div class="photo">
-                </div>
-
-                <div class="person_info">
-                    <h2>马晴晴 <br/>
-                        <small>web前端工程师</small></h2>
-                    <p>出生日期：1991年9月</p>
-                    <p>电话：18310266003</p>
-                    <p>邮箱：<a href="mailto:yexiaoqing723@163.com">qing__sunny@126.com</a></p>
-                    <p>坐标：北京</p>
-                </div>
-
-            </div>
-        </article>
-
-        <article class="slide">
-            <div class="skill">
-                <div class="skill_text">
-                    <h2>不忘初心，从Web前端开始<br/>
-                        <small>精通布局，熟悉特效</small></h2>
-                </div>
-                <div class="skill_form">
-                    <ul>
-                        <li id="list1">
-                            <h4>HTML & CSS</h4>
-
-                            <div class="list1_detail">
-                                <ul>
-                                    <li>熟练HTML/XHTML、CSS，熟悉页面架构和布局，对Web标准和标签语义化有深入理解；</li>
-                                    <li>能够独立完成对设计页面进行网页代码输出；</li>
-                                    <li>能适当运用CSS3使页面在现代浏览器上效果更佳；</li>
-                                    <li>熟悉W3C标准，熟悉主流浏览器兼容性</li>
-                                </ul>
-                            </div>
-                        </li>
-                        <li id="list2">
-                            <h4>Javascript</h4>
-                            <div class="list2_detail">
-                                <ul>
-                                    <li>对JavaScript基础知识的熟练掌握，包括基本语法以及DOM操作；</li>
-                                    <li>熟练掌握Ajax/JSON，有跨域应用的经验</li>
-                                    <li>熟悉JavaScript 面向对象编程的思想。</li>
-                                </ul>
-                            </div>
-                        </li>
-
-                        <li id="list3">
-                            <h4>Html5 & CSS3</h4>
-                            <div class="list3_detail">
-                                <ul>
-                                    <li>深入理解H5语义化标记的含义；</li>
-                                    <li>对CSS3新特性有较深的理解和应用；</li>
-                                    <li>熟悉canvas画图。</li>
-                                </ul>
-                            </div>
-                        </li>
-                        <li id="list4">
-                            <h4>PhotoShop</h4>
-                            <div class="list4_detail">
-                                <ul>
-                                    <li>能熟练进行图片处理和简单平面设计；</li>
-                                    <li>能根据图片特征存成最优的格式。</li>
-                                </ul>
-                            </div>
-                        </li>
-                        <li id="list5">
-                            <h4>PHP & Node.js</h4>
-                            <div class="list5_detail">
-                                <ul>
-                                    <li>了解PHP、Node.js的基本语法。 </li>
-                                </ul>
-                            </div>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-        </article>
-
-        <article class="slide">
-            <div class="demo">
-                <div class="demo_title">
-                    <h2>练习案例</h2>
-                </div>
-                <ul class="js_block clearfix" id="js_block">
-                    <li class="one">
-                        <span>
-                            <i class="js_title">奥运会倒计时</i><br>
-                            <i class="js_dis">用Date对象和定时器实现倒计时效果</i>
-                            <a href="work/countdown.html" target="_blank"></a>
-                        </span>
-                        <a href="work/countdown.html" target="_blank">
-                            <img src="images/countdown.jpg">
-                        </a>
-                    </li>
-                    <li class="three">
-                        <span>
-                             <i class="js_title">小米官网</i><br>
-                            <i class="js_dis">运用html&css，实现界面布局，并解决兼容问题。</i>
-                            <a href="work/mi/index.html" target="_blank"></a>
-                        </span>
-                        <a href="work/mi/index.html" target="_blank">
-                            <img src="images/mi.jpg">
-                        </a>
-
-                    </li>
-                    <li class="four">
-                        <span>
-                             <i class="js_title">聚划算手机端</i><br>
-                            <i class="js_dis">用rem布局实现页面布局，运用ajax技术实现热卖排行数据。</i>
-                             <a href="work/jhs/index.html" target="_blank"> </a>
-                        </span>
-                        <a href="work/jhs/index.html" target="_blank">
-                            <img src="images/jhs.jpg">
-                        </a>
-                    </li>
-                    <li class="two">
-                        <span>
-                            <i class="js_title">模拟百度搜索</i><br>
-                            <i class="js_dis">运用jsonp技术，实现跨域请求。</i>
-                             <a href="work/baidu/baidu.html" target="_blank"></a>
-                        </span>
-                        <a href="work/baidu/baidu.html" target="_blank">
-                            <img src="images/baidu.jpg">
-                        </a>
-
-                    </li>
-                    <li class="seven">
-                       <span>
-                            <i class="js_title">留言板</i><br>
-                            <i class="js_dis">运用ajax技术实现数据交换，通过cookie辨别用户。</i>
-                           <a href="work/weibo/index.html" target="_blank"></a>
-                        </span>
-                        <a href="work/weibo/index.html" target="_blank">
-                            <img src="images/weibo.jpg">
-                        </a>
-                    </li>
-                    <li class="eight">
-                        <span>
-                            <i class="js_title">canvas倒计时</i><br>
-                            <i class="js_dis">运用Date对象和canvas实现倒计时。</i>
-                            <a href="work/canvas/index.html" target="_blank"></a>
-                        </span>
-                        <a href="work/canvas/index.html" target="_blank">
-                            <img src="images/canvas.jpg">
-                        </a>
-                    </li>
-                    <li class="six">
-                        <span>
-                            <i class="js_title">3D爆炸效果</i><br>
-                            <i class="js_dis">运用h5&css3、js实现页面布局和特效。</i>
-                            <a href="work/爆炸效果.html" target="_blank"></a>
-                        </span>
-                        <a href="work/爆炸效果.html" target="_blank">
-                            <img src="images/bz.jpg">
-                        </a>
-                    </li>
-                    <li class="five">
-                        <span>
-                            <i class="js_title">3D图片环</i><br>
-                            <i class="js_dis">运用h5&css3实现页面布局，运用js实现拖拽和运动。</i>
-                            <a href="work/3d图片环.html" target="_blank"></a>
-                        </span>
-                        <a href="work/3d图片环.html" target="_blank">
-                            <img src="images/3d.jpg">
-                        </a>
-                    </li>
-                </ul>
-            </div>
-        </article>
-
-        <article class="slide">
-            <div class="Education">
-                <div class="Education_title">
-                    <h2>大学生活改变了我</h2>
-                    <h2>学的不仅是技术，还有思维</h2>
-                </div>
-                <div class="Education_detail">
-                    <ul >
-                        <li id="major1" >
-
-                            <div id="myMajor1">2011年9月-2014年7月</div>
-                            <div id="myMajor2">保定学院</div>
-                            <div id="myMajor3">电子商务</div>
-                            <div id="myMajor4">大专</div>
-
-                        </li>
-
-                        <li id="major2"  >
-                            <img src="images/C++.jpg" alt="c++基础知识"/>
-                            <h3>C++基础知识</h3>
-                            <p>基本掌握C++的程序设计方法，并初步具备使用C++开发应用程序和解决实际问题的能力。</p>
-                        </li>
-
-                        <li id="major3" >
-                            <img src="images/asp.jpg" alt="asp.net基础知识"/>
-                            <h3>ASP.NET基础知识</h3>
-                            <p >主要学习了网页布局、ASP.NET常用控件、ASP.NET AJAX、基于角色的安全技术、C#语法基础与程序设计方法等知识。</p>
-                        </li>
-
-                        <li id="major4">
-                            <img src="images/sql.jpg" alt="SQL基础知识"/>
-                            <h3>SQL Server基础知识</h3>
-                            <p>主要学习了SQL Server的各种功能、数据库系统设计方法 、维护及管理以及数据库系统开发应用的相关技术。</p>
-                        </li>
-
-                    </ul>
-                </div>
-            </div>
-        </article>
-
-        <article class="slide">
-            <div class="work_list">
-                <div class="work_list_title">
-                    <h2>两年工作经验，互联网行业</h2>
-                </div>
-                <div class="work_list_contain">
-                    <div class="work_list_point">
-                        <div class="work_list_point_bar"></div>
-                        <h4>现在</h4>
-                    </div>
-
-                    <div class="work_list_detail">
-                        <div class="company_name">
-                            <img  src="images/hk.jpg" alt="好课优学" />
-                            <p><strong>北京好课优学科技有限公司——运营编辑</strong></p>
-                        </div>
-                        <div class="company_job">
-
-                            <ul >
-                                <li>协助运营主管进行合作产品专题、策划的拟定；</li>
-                                <li>负责好课网与运营商平台及电商平台合作的在线教育产品的信息更新、页面维护；</li>
-                                <li>对合作产品的日常运营情况进行分析与统计。</li>
-
-                            </ul>
-                        </div>
-                    </div>
-
-                    <div class="work_list_point">
-                        <div class="work_list_point_bar"></div>
-                        <p>2014年11月</p>
-                    </div>
-
-                    <div class="work_list_detail">
-                        <div class="company_name">
-                            <img  src="images/ydc.jpg" alt="北京易得彩" />
-                            <p><strong>北京博易通联科技有限责任公司——运营编辑</strong></p>
-                        </div>
-                        <div class="company_job">
-
-                            <ul >
-                                <li>负责网站的SEO及网站性能优化，包括meta标签、图片及链接的优化等。</li>
-                                <li>负责相关频道内容采编策划，完成栏目的每日内容更新工作</li>
-                                <li>负责网站，微博，微信的线上推广工作。</li>
-                            </ul>
-                        </div>
-                    </div>
-
-                    <div class="work_list_point">
-                        <div class="work_list_point_bar"></div>
-                        <h4>2014年3月</h4>
-                    </div>
-                </div>
-            </div>
-        </article>
-
-        <article class="slide" >
-            <div class="thank">
-                <div class="thank_text">
-                    <h2>致谢</h2>
-                    <p>非常感谢您花时间阅读我的简历，期待有机会和您共事!</p>
-                </div>
-            </div>
-        </article>
+<body style="width: 100%;height: 100%">
+    <!--header start-->
+    <iframe src="header.html" height="49" width="100%" scrolling="no" marginwidth="0" frameborder="no" marginheight="0"></iframe>
+    <!--header end-->
+    <!--banner start-->
+    <div class="banner">
+        <div class="banner-con por">
+            <img class="fl" alt="考拉必过APP大学生必备应用" src="img/banner.jpg">
+            <a class="iphone poa" href="https://itunes.apple.com/app/apple-store/id1090347036?mt=8"></a>
+            <a class="android poa" href="http://files.koalapass.cn/apks/2.1.0/koalapass.apk?OSSAccessKeyId=M8pKJ27iBk4kygfp&Expires=1570785357&Signature=GeTiP%2FQL6s45U9XxzuY18bbfGpI%3D"></a>
+            <a class="web poa" href="javascript:void(0);"></a>
+        </div>
     </div>
-</section>
+    <!--banner end-->
+    <!--content start-->
+    <div class="wrap1200 phone-one por clearfix" id="phone_one">
+        <img class="phone1 poa" src="img/phone_1_1.png">
+        <img class="phone2 poa" src="img/phone_1_2.png">
+        <img class="phone3 poa" src="img/phone_1_3.png">
+        <div class="info mal684 mat334">
+            <h3 class="info-title">四类课程认你选</h3>
+            <i class="info-con" style="font-weight: lighter">名师全面讲解，帮助考生以更贴近的视角掌握做题技巧，快速提高应试的能力，取得高分。</i>
+        </div>
+        <div class="category">
+            <a href="javascript:;">
+                <h3>考研</h3>
+            </a>
+            <a href="javascript:;">
+                <h3>公务员</h3>
+            </a>
+            <a href="javascript:;">
+                <h3>教师资格</h3>
+            </a>
+            <a href="javascript:;" style="border-right: none">
+                <h3>四六级</h3>
+            </a>
+        </div>
+    </div>
+    <div class="wrap1200 por phone-two" id="phone_two">
+        <img class="poa phone-two-img-pos1" src="img/phone_2_2.png">
+        <img class="poa phone-two-img-pos2" src="img/phone_2_1.png" >
+        <div class="info">
+            <h3 class="info-title">四类课程认你选</h3>
+            <i class="info-con">名师全面讲解，帮助考生以更贴近的视角掌握做题技巧，快速提高应试的能力，取得高分。</i>
+        </div>
+    </div>
+    <div class="wrap1200 phone-three por">
+        <img class="poa" src="img/phone_3.png" id="phone_three">
+        <div class="info">
+            <h3 class="info-title">四类课程认你选</h3>
+            <i class="info-con" >名师全面讲解，帮助考生以更贴近的视角掌握做题技巧，快速提高应试的能力，取得高分。</i>
+        </div>
+    </div>
+    <div class="por phone-four">
+        <div class="por phone-four-con por">
+            <img class="phone-4-shadow" src="img/phone_4_shadow.png">
+            <img class="phone-4" src="img/phone_4.png">
+            <div class="info poa">
+                <h3 class="info-title">四类课程认你选</h3>
+                <i class="info-con">名师全面讲解，帮助考生以更贴近的视角掌握做题技巧，快速提高应试的能力，取得高分。</i>
+            </div>
+        </div>
+    </div>
+    <div class="por phone-five">
+        <div class="por phone-five-con por">
+            <img class="poa" src="img/pad.png" id="phone_five">
+            <div class="info poa">
+                <h3 class="info-title">四类课程认你选</h3>
+                <i class="info-con">名师全面讲解，帮助考生以更贴近的视角掌握做题技巧，快速提高应试的能力，取得高分。</i>
+            </div>
+        </div>
+    </div>
+    <div class="wrap1200 por phone-six">
+        <img class="poa" src="img/imac.png">
+        <div class="info poa">
+            <h3 class="info-title">四类课程认你选</h3>
+            <i class="info-con">名师全面讲解，帮助考生以更贴近的视角掌握做题技巧，快速提高应试的能力，取得高分。</i>
+        </div>
+    </div>
+    <div class="price-bg">
+        <div class="wrap1000 price">
+            <div class="pri-msg mat120">
+                <h3 class="pri-title">超低价格</h3>
+                <i class="pri-con">名师全面讲解，帮助考生以更贴近的视角掌握做题技巧，快速提高应试的能力，取得高分。</i>
+            </div>
+            <ul class="pri-list clearfix">
+                <a href="javascript:void(0)">
+                    <li>
+                        <h3>考研</h3>
+                        <span>30元/月</span>
+                    </li>
+                </a>
+                <a href="javascript:void(0)">
+                    <li>
+                        <h3>公务员</h3>
+                        <span>30元/月</span>
+                    </li>
+                </a>
+                <a href="javascript:void(0)">
+                    <li>
+                        <h3>教师资格</h3>
+                        <span>30元/月</span>
+                    </li>
+                </a>
+                <a href="javascript:void(0)">
+                    <li style="margin-right: 0">
+                        <h3>四六级</h3>
+                        <span>30元/月</span>
+                    </li>
+                </a>
+            </ul>
+        </div>
+    </div>
+    <!--content end-->
+    <!--footer start-->
+    <iframe src="footer.html" height="240" width="100%" scrolling="no" marginwidth="0" frameborder="no" marginheight="0"></iframe>
+    <!--footer end-->
 
+    <!--返回顶部 start-->
+    <div class="return-top">
+        <a class="return-top-btn" href="javascript:viod(0)" id="return-top"></a>
+    </div>
+    <script>
+        //首先将右侧返回键隐藏
+        $(".return-top").hide();
+        //当滚动条的位置处于距顶部100像素以下时，跳转链接出现，否则消失
+        $(function(){
+            $(window).scroll(function(){
+                if ($(window).scrollTop()>400){
+                    $(".return-top").show();
+                }
+                else{
+                    $(".return-top").hide();
+                }
+            });
+
+            //当点击回顶部链接后，回到页面顶部位置
+            $("#return-top").click(function(){
+                $("body,html").animate({scrollTop:0},400);
+                return false;
+            });
+        });
+
+    </script>
+    <!--返回顶部 end-->
+    <script>
+        //手机效果
+        var phoneOne = document.getElementById('phone_one');
+        var phoneTwo = document.getElementById('phone_two');
+        var phoneThree = document.getElementById('phone_three');
+        var phoneFive = document.getElementById('phone_five');
+        var imgOne = phoneOne.getElementsByTagName('img');
+        var imgTwo = phoneTwo.getElementsByTagName('img');
+        var clientH = document.documentElement.clientHeight;
+        var clientW = document.documentElement.clientWidth;
+
+        //console.log(clientW);
+        //console.log(phoneThree)
+
+        function phoneMove(){
+            move(imgOne[0],{top:275},{time:1000});
+            move(imgOne[1],{top:146},{time:1500});
+            move(imgOne[2],{top:79});
+            move(phoneOne,{opacity:1});
+        }
+
+        window.onscroll = function(){
+            var scrollT = document.body.scrollTop || document.documentElement.scrollTop;
+            //console.log(scrollT);
+
+            if(scrollT >= 300){
+                phoneMove();
+            }
+            if(scrollT >= 1500){
+                move(imgTwo[0],{top:312});
+                move(imgTwo[1],{top:129});
+            }
+            if(scrollT >= 2400){
+                move(phoneThree,{top:40})
+            }
+
+            if(scrollT >= 5200){
+                move(phoneFive,{top:172})
+            }
+        }
+
+    </script>
 </body>
 </html>
