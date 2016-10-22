@@ -2,210 +2,42 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>考拉必过APP官网</title>
-    <meta content="考拉必过,考研,公务员,教师资格,好课,大学生备考,好课网,网上辅导,在线学习,app学习" name="keywords" />
-    <meta content="考拉必过，一款让大学生轻松备考的APP。为你提供华图、智课网、新东方、中人教育的名师精品课，你只需要装一个APP，就可以轻松拥有全套课程，导学、基础、强化、冲刺、真题，全部囊括。公务员、考研、四六级、教师资格，通通拿下，一次考过！" name="description" />
-    <link rel="stylesheet" href="css/app2.css" type="text/css">
+    <title>Title</title>
+    <link rel="stylesheet" type="text/css" href="css/base.css">
     <style>
-        @media screen  and (max-width: 1920px){
-            html{font-size: 20px;}
-        }
-        @media screen  and (min-width: 750px) and (max-width: 1000px){
-            html{font-size: 16px;}
-        }
-        @media screen and (max-width: 750px){
-            html{font-size: 12px;}
-        }
+        .pay-succ{width: 15rem;height:25.1rem;text-align: center;background: url("img/bg.jpg") no-repeat;background-size: 15rem 29.46rem;overflow: hidden}
+        .paytips-box{margin: 3.56rem auto 0;font-size: .6rem;color: #fff;text-align: center;line-height: 1rem;}
+        .tip-succ{display: inline-block;margin-left:.6rem;width:5.42rem;height:6.32rem ;background: url("img/pay-succ.png") no-repeat;;background-size: 5.42rem 6.32rem;}
+        .btn-study{display: inline-block; margin-top: 1.74rem;width:6rem;height: 2.2rem;}
+        .btn-study img{width: 6rem;height: 2.2rem}
+        .msg{margin: 2.5rem auto 0;text-align: center}
+        .msg span{display: inline-block;width: 4rem;height:1.44rem;background: url("img/msg-title.png");background-size: 4rem 1.44rem }
+        .msg p{margin:0 0 0 .76rem;width: 13.5rem;text-align:justify;font-size: .56rem;color: #fff;line-height: .72rem;}
     </style>
-    <script src="js/jquery-1.7.2.js"></script>
-    <script src="js/move.js"></script>
+    <script>
+        (function(){
+            function change(){
+                var font=document.documentElement.clientWidth/(375/25);
+                document.documentElement.style.fontSize=font+'px';
+            }
+            window.addEventListener('resize',change,false);
+            change();
+        })()
+    </script>
 </head>
-<body style="width: 100%;height: 100%">
-    <!--header start-->
-    <iframe src="header.html" height="49" width="100%" scrolling="no" marginwidth="0" frameborder="no" marginheight="0"></iframe>
-    <!--header end-->
-    <!--banner start-->
-    <div class="banner">
-        <div class="banner-con por">
-            <img class="fl" alt="考拉必过APP大学生必备应用" src="img/banner.jpg">
-            <a class="iphone poa" href="https://itunes.apple.com/app/apple-store/id1090347036?mt=8"></a>
-            <a class="android poa" href="http://files.koalapass.cn/apks/2.1.0/koalapass.apk?OSSAccessKeyId=M8pKJ27iBk4kygfp&Expires=1570785357&Signature=GeTiP%2FQL6s45U9XxzuY18bbfGpI%3D"></a>
-            <a class="web poa" href="javascript:void(0);"></a>
+<body>
+    <div class="pay-succ">
+        <div class="paytips-box">
+            <span class="tip-succ"></span><br/>
+            购买成功，立刻去学习吧
+        </div>
+        <div class="btn-study">
+            <a href="javascript:vido(0)"><img src="img/btn-start.png"></a>
+        </div>
+        <div class="msg">
+            <span></span>
+            <p>说明规则说明规则说明规则说明规则说明规则说明规则说明规则说明规则</p>
         </div>
     </div>
-    <!--banner end-->
-    <!--content start-->
-    <div class="wrap1200 phone-one por clearfix" id="phone_one">
-        <img class="phone1 poa" src="img/phone_1_1.png">
-        <img class="phone2 poa" src="img/phone_1_2.png">
-        <img class="phone3 poa" src="img/phone_1_3.png">
-        <div class="info mal684 mat334">
-            <h3 class="info-title">四类课程认你选</h3>
-            <i class="info-con" style="font-weight: lighter">名师全面讲解，帮助考生以更贴近的视角掌握做题技巧，快速提高应试的能力，取得高分。</i>
-        </div>
-        <div class="category">
-            <a href="javascript:;">
-                <h3>考研</h3>
-            </a>
-            <a href="javascript:;">
-                <h3>公务员</h3>
-            </a>
-            <a href="javascript:;">
-                <h3>教师资格</h3>
-            </a>
-            <a href="javascript:;" style="border-right: none">
-                <h3>四六级</h3>
-            </a>
-        </div>
-    </div>
-    <div class="wrap1200 por phone-two" id="phone_two">
-        <img class="poa phone-two-img-pos1" src="img/phone_2_2.png">
-        <img class="poa phone-two-img-pos2" src="img/phone_2_1.png" >
-        <div class="info">
-            <h3 class="info-title">四类课程认你选</h3>
-            <i class="info-con">名师全面讲解，帮助考生以更贴近的视角掌握做题技巧，快速提高应试的能力，取得高分。</i>
-        </div>
-    </div>
-    <div class="wrap1200 phone-three por">
-        <img class="poa" src="img/phone_3.png" id="phone_three">
-        <div class="info">
-            <h3 class="info-title">四类课程认你选</h3>
-            <i class="info-con" >名师全面讲解，帮助考生以更贴近的视角掌握做题技巧，快速提高应试的能力，取得高分。</i>
-        </div>
-    </div>
-    <div class="por phone-four">
-        <div class="por phone-four-con por">
-            <img class="phone-4-shadow" src="img/phone_4_shadow.png">
-            <img class="phone-4" src="img/phone_4.png">
-            <div class="info poa">
-                <h3 class="info-title">四类课程认你选</h3>
-                <i class="info-con">名师全面讲解，帮助考生以更贴近的视角掌握做题技巧，快速提高应试的能力，取得高分。</i>
-            </div>
-        </div>
-    </div>
-    <div class="por phone-five">
-        <div class="por phone-five-con por">
-            <img class="poa" src="img/pad.png" id="phone_five">
-            <div class="info poa">
-                <h3 class="info-title">四类课程认你选</h3>
-                <i class="info-con">名师全面讲解，帮助考生以更贴近的视角掌握做题技巧，快速提高应试的能力，取得高分。</i>
-            </div>
-        </div>
-    </div>
-    <div class="wrap1200 por phone-six">
-        <img class="poa" src="img/imac.png">
-        <div class="info poa">
-            <h3 class="info-title">四类课程认你选</h3>
-            <i class="info-con">名师全面讲解，帮助考生以更贴近的视角掌握做题技巧，快速提高应试的能力，取得高分。</i>
-        </div>
-    </div>
-    <div class="price-bg">
-        <div class="wrap1000 price">
-            <div class="pri-msg mat120">
-                <h3 class="pri-title">超低价格</h3>
-                <i class="pri-con">名师全面讲解，帮助考生以更贴近的视角掌握做题技巧，快速提高应试的能力，取得高分。</i>
-            </div>
-            <ul class="pri-list clearfix">
-                <a href="javascript:void(0)">
-                    <li>
-                        <h3>考研</h3>
-                        <span>30元/月</span>
-                    </li>
-                </a>
-                <a href="javascript:void(0)">
-                    <li>
-                        <h3>公务员</h3>
-                        <span>30元/月</span>
-                    </li>
-                </a>
-                <a href="javascript:void(0)">
-                    <li>
-                        <h3>教师资格</h3>
-                        <span>30元/月</span>
-                    </li>
-                </a>
-                <a href="javascript:void(0)">
-                    <li style="margin-right: 0">
-                        <h3>四六级</h3>
-                        <span>30元/月</span>
-                    </li>
-                </a>
-            </ul>
-        </div>
-    </div>
-    <!--content end-->
-    <!--footer start-->
-    <iframe src="footer.html" height="240" width="100%" scrolling="no" marginwidth="0" frameborder="no" marginheight="0"></iframe>
-    <!--footer end-->
-
-    <!--返回顶部 start-->
-    <div class="return-top">
-        <a class="return-top-btn" href="javascript:viod(0)" id="return-top"></a>
-    </div>
-    <script>
-        //首先将右侧返回键隐藏
-        $(".return-top").hide();
-        //当滚动条的位置处于距顶部100像素以下时，跳转链接出现，否则消失
-        $(function(){
-            $(window).scroll(function(){
-                if ($(window).scrollTop()>400){
-                    $(".return-top").show();
-                }
-                else{
-                    $(".return-top").hide();
-                }
-            });
-
-            //当点击回顶部链接后，回到页面顶部位置
-            $("#return-top").click(function(){
-                $("body,html").animate({scrollTop:0},400);
-                return false;
-            });
-        });
-
-    </script>
-    <!--返回顶部 end-->
-    <script>
-        //手机效果
-        var phoneOne = document.getElementById('phone_one');
-        var phoneTwo = document.getElementById('phone_two');
-        var phoneThree = document.getElementById('phone_three');
-        var phoneFive = document.getElementById('phone_five');
-        var imgOne = phoneOne.getElementsByTagName('img');
-        var imgTwo = phoneTwo.getElementsByTagName('img');
-        var clientH = document.documentElement.clientHeight;
-        var clientW = document.documentElement.clientWidth;
-
-        //console.log(clientW);
-        //console.log(phoneThree)
-
-        function phoneMove(){
-            move(imgOne[0],{top:275},{time:1000});
-            move(imgOne[1],{top:146},{time:1500});
-            move(imgOne[2],{top:79});
-            move(phoneOne,{opacity:1});
-        }
-
-        window.onscroll = function(){
-            var scrollT = document.body.scrollTop || document.documentElement.scrollTop;
-            //console.log(scrollT);
-
-            if(scrollT >= 300){
-                phoneMove();
-            }
-            if(scrollT >= 1500){
-                move(imgTwo[0],{top:312});
-                move(imgTwo[1],{top:129});
-            }
-            if(scrollT >= 2400){
-                move(phoneThree,{top:40})
-            }
-
-            if(scrollT >= 5200){
-                move(phoneFive,{top:172})
-            }
-        }
-
-    </script>
 </body>
 </html>
