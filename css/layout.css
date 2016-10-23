@@ -1,0 +1,28 @@
+/*秒杀页*/
+.seckill{font-family: "微软雅黑";color:#fff;width: 15rem;height: 29.46rem;background: url("../img/bg.jpg") no-repeat;background-size: 15rem 29.46rem;text-align: center}
+.banner{width: 15rem;height:7.6rem;background: url("../img/banner.jpg") no-repeat center;background-size: 15rem 7.6rem; }
+.act-time{margin: 0.96rem auto 0;text-align: center}
+.act-time h4{margin-top: .6rem;font-size: .6rem;color: #fff;}
+.seckill-time{;margin: 1.4rem auto 0;width:13.6rem;height:5.9rem;background: url("../img/seckill.png") no-repeat center;  background-size: 13.6rem 5.9rem;overflow: hidden}
+/*.time{border: 1px solid #ccc;margin:2.72rem auto 0;width: 9.06rem;height:1.2rem;font-size: .8rem;color: #fff;text-align: center}*/
+.seckill-time span{display: inline-block;width: 1.62rem;height: 1.2rem;text-align: center;line-height: 1.2rem;}
+.seckill-time span i{display: inline-block;width: .8rem;height: 1.2rem;text-align: center}
+.day{top:2.72rem;left: 2.58rem}
+.hour{top:2.72rem;left:4.72rem }
+.min{top:2.72rem;left: 6.86rem;}
+.sec{top:2.72rem;left: 9rem;}
+.btn-seckill{display: inline-block;;margin-top: 1.54rem;width:10.24rem;height: 2.3rem; }
+.btn-seckill img{width:10.24rem;height: 2.3rem; }
+
+/*支付提示*/
+.pay{width: 15rem;height:25.1rem;text-align: center;background: url("../img/bg.jpg") no-repeat;background-size: 15rem 29.46rem;overflow: hidden}
+.paytips-box{margin: 3.56rem auto 0;font-size: .6rem;color: #fff;text-align: center;line-height: 1rem;}
+/*.tip-succ{display: inline-block;margin-left:.6rem;width:5.42rem;height:6.32rem ;background: url("../img/pay-succ.png") no-repeat;;background-size: 5.42rem 6.32rem;}*/
+.paytips-box img{display: inline-block;margin-left:.6rem;width:5.42rem;height:6.32rem;}
+.btn-study{display: inline-block; margin-top: 1.74rem;width:6rem;height: 2.2rem;}
+.btn-fail{margin-top:2.72rem;}
+.btn-study img,.btn-fail img{width: 6rem;height: 2.2rem}
+.msg{margin: 1rem auto 0;text-align: center}
+.msg span,.act-time span{display: inline-block;width: 4rem;height:1.44rem;background: url("../img/msg-title.png") no-repeat;background-size: 4rem 1.44rem }
+.act-time span{background: url("../img/time-title.png") no-repeat;background-size: 4rem 1.44rem }
+.msg p{margin:0 0 0 .76rem;width: 13.5rem;text-align:justify;font-size: .56rem;color: #fff;line-height: .72rem;}
