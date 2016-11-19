@@ -1,28 +1,126 @@
-/*秒杀页*/
-.seckill{font-family: "微软雅黑";color:#fff;width: 15rem;height: 29.46rem;background: url("../img/bg.jpg") no-repeat;background-size: 15rem 29.46rem;text-align: center}
-.banner{width: 15rem;height:7.6rem;background: url("../img/banner.jpg") no-repeat center;background-size: 15rem 7.6rem; }
-.act-time{margin: 0.96rem auto 0;text-align: center}
-.act-time h4{margin-top: .6rem;font-size: .6rem;color: #fff;}
-.seckill-time{;margin: 1.4rem auto 0;width:13.6rem;height:5.9rem;background: url("../img/seckill.png") no-repeat center;  background-size: 13.6rem 5.9rem;overflow: hidden}
-/*.time{border: 1px solid #ccc;margin:2.72rem auto 0;width: 9.06rem;height:1.2rem;font-size: .8rem;color: #fff;text-align: center}*/
-.seckill-time span{display: inline-block;width: 1.62rem;height: 1.2rem;text-align: center;line-height: 1.2rem;}
-.seckill-time span i{display: inline-block;width: .8rem;height: 1.2rem;text-align: center}
-.day{top:2.72rem;left: 2.58rem}
-.hour{top:2.72rem;left:4.72rem }
-.min{top:2.72rem;left: 6.86rem;}
-.sec{top:2.72rem;left: 9rem;}
-.btn-seckill{display: inline-block;;margin-top: 1.54rem;width:10.24rem;height: 2.3rem; }
-.btn-seckill img{width:10.24rem;height: 2.3rem; }
+.main{width: 15rem;min-height: 24.12rem;margin: 0 auto;text-align: center;background: url("../images/main-bg.jpg") no-repeat;background-size: 15rem 24.12rem;overflow: hidden;}
+.main .activity-instruction{width: 9.48rem;height:4.36rem;margin: 10.46rem auto 0;padding: 0 .5rem;text-align: center;
+    background: url("../images/activity-instruction-bg.png") center no-repeat;background-size: 10.48rem 4.36rem;overflow: hidden }
+.main .activity-instruction p{margin:2.15rem auto 0;font-size: .6rem;color: #333;line-height: .9rem;}
+.btn-box{width: 13.8rem;height: 1.8rem;margin:.9rem auto 0}
+.btn-box span{display: inline-block;width: 5.6rem;height: 1.8rem;margin: 0 .5rem;}
+.btn-bg{background: url("../images/sprite.png")no-repeat;background-size: 16rem;}
+.btn-activity-rule{background-position: left -2.02rem;}
+.btn-personal-center{background-position: left -3.96rem}
+.lucky-draw{margin-top: .4rem;font-size: .6rem;color: #312d2e;}
+.lucky-draw i{margin: 0 .13rem;font-size: .96rem;color: #f9e6bd;}
+.btn-more-lucky,.btn-room-more-lucky{display: inline-block;width: 7.8rem;height: 1.06rem;margin-top: .6rem;background-position: -5.86rem -2.06rem;}
+.btn-click-lucky{display: inline-block;width: 12.4rem;height: 1.8rem;margin-top: .6rem;background-position: 0 -.04rem;}
+.lucky-tips{font-size: .52rem;color: #ff99ae;}
 
-/*支付提示*/
-.pay{width: 15rem;height:25.1rem;text-align: center;background: url("../img/bg.jpg") no-repeat;background-size: 15rem 29.46rem;overflow: hidden}
-.paytips-box{margin: 3.56rem auto 0;font-size: .6rem;color: #fff;text-align: center;line-height: 1rem;}
-/*.tip-succ{display: inline-block;margin-left:.6rem;width:5.42rem;height:6.32rem ;background: url("../img/pay-succ.png") no-repeat;;background-size: 5.42rem 6.32rem;}*/
-.paytips-box img{display: inline-block;margin-left:.6rem;width:5.42rem;height:6.32rem;}
-.btn-study{display: inline-block; margin-top: 1.74rem;width:6rem;height: 2.2rem;}
-.btn-fail{margin-top:2.72rem;}
-.btn-study img,.btn-fail img{width: 6rem;height: 2.2rem}
-.msg{margin: 1rem auto 0;text-align: center}
-.msg span,.act-time span{display: inline-block;width: 4rem;height:1.44rem;background: url("../img/msg-title.png") no-repeat;background-size: 4rem 1.44rem }
-.act-time span{background: url("../img/time-title.png") no-repeat;background-size: 4rem 1.44rem }
-.msg p{margin:0 0 0 .76rem;width: 13.5rem;text-align:justify;font-size: .56rem;color: #fff;line-height: .72rem;}
+/*活动规则*/
+.activity-rule{position: fixed;width: 100%;height: 100%;top:0;left: 0;background: rgba(0,0,0,.5);z-index: 9999;overflow: hidden;}
+.btn-activity-rule-close{display: inline-block;position: absolute;right: .4rem;top:5rem;width: 1.6rem;height: 1.6rem;line-height: 1.35rem;font-size: 2rem;
+    color:#eb3f63;text-align:center;border-radius: 50%;background: #fff;z-index: 99999}
+.activity-rule-con{position: relative;z-index:-1;width:13.2rem;height: 18rem;margin:5.6rem auto 0;background: #fff;border-radius: .4rem;overflow: auto }
+.activity-rule-con-title{width: 5.21rem;height: 1.62rem;margin: 1.2rem auto .7rem;text-indent: -999px;background-position:-2.48rem -9.42rem; }
+.activity-rule-con div{margin: .36rem 0 0 .54rem}
+.activity-rule-con-left{float: left;display: inline-block;width: 3rem;height: .8rem;line-height: .8rem;text-align: center;font-size: .6rem;color: #fff;background: #eb3f63;border-radius: .4rem}
+.activity-rule-con-right{float: left;width: 8.9rem;margin-left: .4rem;font-size: .56rem;color: #666;line-height: .8rem;text-align: left}
+.activity-rule-con h4{width: 8.9rem;height: .8rem;margin: .5rem auto .8rem;line-height: .8rem;text-align: center;font-size: .6rem;color: #fff;background: #eb3f63}
+
+/*个人中心*/
+.banner{width: 15rem;height:5.2rem;margin: 0 auto;background: url("../images/banner.jpg") center no-repeat;background-size: 15rem 5.2rem; }
+.personal-center-con{width: 15rem;margin: 0 auto;background: #f9e9c5;overflow: hidden}
+.my-luck-title{width: 5.4rem;height: 1.4rem;margin-top: .6rem;line-height: 1.4rem;border-bottom-right-radius:.7rem;
+    border-top-right-radius:.7rem;background: #eb3f63;font-size: .72rem;color: #fff;text-align: center;}
+.no-involved{width: 13.8rem;height: 6.34rem;margin: .8rem auto 0;text-align: center;background-position:4.9rem -5.94rem ;border: 1px solid #f9e9c5;}
+.no-involved h4{margin-top: 3.3rem;font-size: .6rem;color: #666;line-height: .6rem}
+.btn-go-luck{display: inline-block;width: 5.6rem;height: 1.8rem;margin-top: .68rem;background-position:-5.8rem -3.36rem;}
+.duijiang-type{width: 12.68rem;padding: 0 .56rem;margin:2rem auto 0;border: 1px solid #eb3f63;border-radius: .2rem;}
+.duijiang-type h3{width: 4.3rem;height: .72rem;margin: -.4rem auto 0;font-size: .72rem;line-height: .72rem;text-align: center;background: #f9e9c5;}
+.duijiang-type p{font-size: .56rem;color: #666;line-height: .9rem}
+.code-con{width: 13.8rem;height:5.8rem ;margin: 1.1rem 0 1.6rem 0;position: relative;}
+.code-con-left{position: absolute;display: inline-block;width: 5rem;top:1.1rem;margin-left: 1rem;font-size: .6rem;color: #666;line-height: .9rem;text-align: center}
+.code-con-right{display: inline-block;margin-left: 6.9rem}
+.code-con-right img{width: 5.8rem;height: 5.8rem;}
+.btn-return-main{display: block;width: 12.4rem;height: 1.8rem;margin: 1.6rem auto 1rem;background-position:0 -14.2rem; }
+.no-lottery{}
+.no-lottery ul,.lottery ul{width: 14.4rem;padding:0 0 0 .6rem;overflow: hidden;}
+.no-lottery ul li,.lottery ul li{width: 13.82rem;height: 3.62rem;margin-top: .6rem;background: url("../images/lottery-bg.png") center no-repeat;background-size: 13.82rem 3.62rem;}
+.lottery-con-left{float: left;position: relative;width:2.8rem;height: 2.8rem;margin: .4rem 0 0 .4rem;overflow: hidden}
+.lottery-con-left i{position:absolute;left:.3rem;font-size: .52rem;color: #fff;}
+.lottery-con-left h4{width: 2.8rem;margin-top: .5rem;text-align: center;line-height: 1.66rem;font-size: 1.66rem;color: #fff;}
+.lottery-con-left p{position: absolute;bottom:0;width: 2.8rem;height: .56rem;line-height: .56rem;text-align: center;font-size: .4rem;color: #fff;background: #c80d27;}
+.lottery-con-right{position:relative;width:9.76rem;height: 3.6rem;float: left;margin-left: .38rem;padding-left: .4rem}
+.lottery-con-right p{font-size: .6rem;color: #666;line-height: .8rem;margin-top: .3rem}
+.lottery-con-right .lucky-people{font-size: .52rem;color: #999;margin-top: .7rem;}
+.lottery-con-right .lucky-people i{color: #eb3f63;}
+.lottery-con-right .lucky-times{position: absolute;right: -.2rem;top:-.2rem;width: 1.4rem;height: .69rem;font-size: .44rem;color: #fff;text-align: center;line-height:.7rem;background: #ff7e00;border-radius: .1rem;}
+.lottery-con-right .btn-go-check{display: inline-block;position: absolute;bottom:.4rem;right:.2rem;width: 2.2rem;height: .96rem;border-radius: .5rem;text-align: center;line-height:.96rem;font-size: .56rem;color: #fff;background: #eb3f63}
+.lottery-con-right .seal{position: absolute;bottom:.1rem;left: 4.6rem;width: 2.4rem;height: 2.4rem;background-position:-.05rem -8.64rem }
+
+/*更多机会*/
+.more-chance{width: 15rem;margin: 0 auto;overflow: hidden}
+.more-chance-title{width: 6.58rem;height: 1.4rem;padding-left: .6rem;margin-top: .6rem;line-height: 1.4rem;border-bottom-right-radius:.7rem;
+    border-top-right-radius:.7rem;background: #eb3f63;font-size: .72rem;color: #fff;text-align: center;}
+.more-chance-con{margin-top: .74rem;text-align: center;}
+.more-chance-con p{float: left;width:12.52rem;margin:.2rem 0 0 .2rem;font-size: .56rem;color: #666;line-height: .9rem;text-align: left}
+.more-chance-con p i{color: #333;}
+.more-chance-type-bg{display: inline-block;float: left;width:1.04rem;height: 1rem;margin-left: .6rem;background-position: 0 -11.2rem;font-size: .72rem;color: #fff;text-align: center;line-height: 1rem; }
+.btn-more-chance{display: inline-block;width: 6rem;height: 1.8rem;margin-top: .9rem;font-size: .8rem;color: #fff;text-align:center;line-height:1.8rem;background-position: -5.6rem -5.3rem;}
+.invite{display: none;position: fixed;width: 100%;height: 100%;background:rgba(0,0,0,.5);z-index: 9999;top:0;left: 0;}
+.invite-con{position:absolute;bottom:0;width: 15rem;height: 4rem;background: #fff;display: -webkit-box;display: -moz-box}
+.invite a{display: block;-webkit-box-flex: 3;;-moz-box-flex:3;}
+.invite-con div{margin-top: .6rem;text-align: center;}
+.invite-con div span{display: inline-block;width: 2.14rem;height: 2.14rem;}
+.invite-con div p{font-size: .48rem;color: #999;}
+.wechat{background-position: -4.04rem -7.22rem}
+.qq{background-position:-8.45rem -7.22rem }
+.friend{background-position:-6.24rem -7.22rem }
+.sina{background-position: -10.62rem -7.22rem}
+
+/*中奖公告*/
+.draw-notice-title,.another-draw-title{width: 3.92rem;height: 1.4rem;margin-top: .6rem;line-height: 1.4rem;border-bottom-right-radius:.7rem;
+    border-top-right-radius:.7rem;background: #eb3f63;font-size: .72rem;color: #fff;text-align: center;}
+.draw-notice-box{margin-top:.6rem ;height: 3rem;overflow: hidden}
+.draw-notice-list{width: 13.8rem;padding: 0 .6rem;}
+.draw-notice-list li{margin-top: .6rem;font-size: .56rem;color: #666;line-height: .6rem;}
+.draw-notice-list li span{display: inline-block;width: .2rem;height: .2rem;background: #eb3f63;border-radius: 50%;}
+.draw-notice-list li p{display: inline-block;margin-left: .6rem}
+.draw-notice-list li p i{color: #eb3f63;margin: 0 .3rem}
+.draw-notice-list li p i:nth-child(2){font-size: .6rem;}
+.another-draw-title{width: 9.4rem;margin-top: 1rem;}
+
+/*抽奖房间*/
+.draw-room{width: 15rem;margin: 0 auto;text-align: center;}
+.draw-room-lottery-list{width: 13.8rem;margin: .6rem auto 0;padding: 0 .6rem;}
+.draw-room-lottery-list li{width:13.82rem;height: 3.62rem;background: url("../images/lottery-room-bg.png") no-repeat;background-size: 13.82rem 3.62rem;}
+.room-lottery-con-right{position:relative;width:9.76rem;height: 3.6rem;float: left;margin-left: .38rem;padding-left: .4rem}
+.room-lottery-con-right p{font-size: .6rem;color: #333;line-height: .8rem;margin-top: .5rem}
+.room-lottery-con-right .lucky-times{display: inline-block;width: 1.96rem;height: .8rem;background: #ff7e00;font-size: .52rem;color: #fff;line-height: .8rem;text-align: center;border-radius: .15rem;}
+.room-lottery-con-right .btn-go-rule{display: inline-block;width:2.8rem;height: .96rem;margin-left: 4rem;line-height:.96rem;text-align:center;font-size: .56rem;color: #fff;background: #eb3f63;border-radius: .4rem;}
+.lucky-draw{margin-top: 1.2rem;font-size: .6rem;color: #312d2e;}
+.lucky-draw i{margin: 0 .13rem;font-size: .96rem;color: #eb3f63;}
+.btn-room-more-lucky{height: 1.28rem;background-position: -1.2rem -11.26rem}
+.room-details{width: 13.8rem;margin: 1.6rem auto 0;border: 1px solid #eb3f63;border-radius: .2rem;background: #fff;}
+.room-details h4{font-size: .72rem;color: #eb3f63;width:12.8rem;height: 1.32rem;margin: .5rem auto .2rem;line-height: 1.32rem;text-align: center;background: #f9e6bd;border-radius: .2rem; }
+.room-details-list li{width: 12.6rem;height: 1.7rem;margin: 0 .6rem;line-height: 1.7rem;font-size: .56rem;color:#666;text-align: left;border-bottom: 1px solid #ccc;}
+.room-details-list li:nth-last-child(1){border-bottom: none}
+.room-details li i{color: #eb3f63;margin: 0 .9rem 0 .5rem}
+.room-details hr{width: 13.9rem;margin-left: -1px;height: .2rem;background: #f9e6bd;border: none;}
+.room-details p{width: 13.8rem;height:1.8rem;line-height: 1.8rem;text-align:center;font-size: .6rem;color: #666;}
+.room-details p i{font-size: .72rem;color: #eb3f63;}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

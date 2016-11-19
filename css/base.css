@@ -1,5 +1,13 @@
-html,body{margin: 0;padding: 0;}
-h1,h2,h3,h4,h5,h6{font-size: 16rem;font-weight: normal;line-height: 0}
+*{margin: 0;padding: 0;}
+html,body,div,h1,h2,h3,h4,h5,h6,ul,ol,li,dl,dt,dd,p,blockquote,pre,form,fieldset,table,th,td,map{margin:0;padding:0;}
+body{font-family: "Microsoft YaHei","微软雅黑",Helvetica,"SimSun",Arial,Tahoma,Verdana}
+h1,h2,h3,h4,h5,h6{font-weight: normal;line-height: 0}
+ul,ol,dl,li{list-style:none;}
+a{text-decoration: none;}
 i,em{font-style: normal}
 .por{position: relative}
 .poa{position: absolute}
+.fl{float: left}
+.fr{float: right}
+.clearfix:after{content: "";display: block;clear: both}
+.clearfix{zoom: 1}
