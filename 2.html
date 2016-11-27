@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div id="box" style="width: 400px;height: 200px;border: 1px solid #2c8ee5;font-size: 50px;color: #2c8ee5;margin: 0 auto">分享</div>
+<!-- JiaThis Button BEGIN -->
+<div class="jiathis_style_m" style="display: none;margin: 0 auto;"></div>
+<script type="text/javascript" src="http://v3.jiathis.com/code/jiathis_m.js" charset="utf-8"></script>
+<!-- JiaThis Button END -->
+<script>
+    var oBox = document.querySelector("#box");
+    var oShare = document.querySelector(".jiathis_style_m");
+
+    oBox.onclick = function(){
+        oShare.style.display = "block";
+    }
+</script>
+</body>
+</html>
