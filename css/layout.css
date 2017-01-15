@@ -8,8 +8,8 @@
 .btn-personal-center{top:6rem;right: .2rem}
 .bg-chicken{margin: 0 auto;width: 15rem;height: 15.8rem;background:url("../img/yz_ny_bg_chicken_750-790.jpg")center;background-size: 15rem 15.8rem;}
 .bg-chicken img{width: 15rem;height: 15.8rem;}
-/*.content{background: linear-gradient(bottom,#fb7d69,#fe5b56)}*/
 .content{margin: 0 auto;padding-bottom: 2rem;width: 15rem;background: url("../img/bg.jpg");background-size: 15rem 30rem}
+
 /*幸运大转盘*/
 .turn-con{overflow-x:hidden;width: 100%;}
 .turncol{display:block;width:85%;margin:1rem auto 1rem}
@@ -30,7 +30,7 @@
 .draw-list-con li{position: relative;width: 12.6rem;height: .5rem;margin-bottom: .6rem;font-size: .48rem;color: #666;line-height: .6rem;}
 .draw-list-con li:nth-last-child(1){margin-top: 0;}
 .circle{position: absolute;top:.15rem;;display: inline-block;width: .2rem;height: .2rem;background: #eb3f63;border-radius: 50%;}
-.draw-list-con li p{display: inline-block;width:11.9rem;height: .6rem;text-overflow: ellipsis;white-space: nowrap;overflow: hidden}
+.draw-list-con li p{display: inline-block;width:11.9rem;line-height: .48rem;text-overflow: ellipsis;white-space: nowrap;overflow: hidden}
 .draw-list-con li p i{color: #8f7f7e;font-size: .44rem;}
 .prize{display: inline-block;margin: 0 .3rem;width: 3.5rem;text-overflow: ellipsis;white-space: nowrap;overflow: hidden}
 
