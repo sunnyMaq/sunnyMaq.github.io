@@ -19,7 +19,7 @@
 
 /*抽奖机会*/
 .lucky-draw{margin: 0 auto;width: 13.5rem;height: 1.76rem;background:url("../img/yz_ny_chance_bg-690-88.png") center;background-size: 13.5rem 1.76rem;text-align: center; }
-.lucky-draw-tips{font-size: .6rem;color: #c82c2f;margin-top: .7rem}
+.lucky-draw-tips{font-size: .6rem;color: #c82c2f;margin-top: .3rem}
 .lucky-draw-tips i{margin: 0 .1rem;font-size: .72rem;color: #fff;font-weight: 500;}
 
 /*抽奖列表*/
