@@ -29,7 +29,7 @@
 .draw-list-con{}
 .draw-list-con li{position: relative;width: 12.6rem;height: .5rem;margin-bottom: .6rem;font-size: .48rem;color: #666;line-height: .6rem;}
 .draw-list-con li:nth-last-child(1){margin-top: 0;}
-.circle{position: absolute;top:.15rem;display: inline-block;width: .2rem;height: .2rem;background: url("../img/circle.png")center;background-size: .2rem .2rem;}
+.circle{position: absolute;display: inline-block;width: .2rem;height: .4rem;background: url("../img/circle.png")center;background-size: .2rem .4rem;}
 .draw-list-con li p{display: inline-block;width:11.9rem;line-height: .48rem;text-overflow: ellipsis;white-space: nowrap;overflow: hidden}
 .draw-list-con li p i{color: #8f7f7e;font-size: .44rem;}
 .prize{display: inline-block;margin: 0 .3rem;width: 3.5rem;text-overflow: ellipsis;white-space: nowrap;overflow: hidden}
@@ -40,8 +40,8 @@
 .activity-rule-title{width: 15rem;text-align: center;margin: 1.8rem 0 .2rem}
 .activity-rule-title img{width: 4.86rem;}
 .btn-close{display: block;width: 1.4rem;height: 1.4rem;margin-left: 11.6rem}
-.activity-rule-con-box{width: 9.3rem;height: 11.7rem;margin: .5rem auto 0;overflow: hidden}
-.activity-rule-con,.personal-center-con{width: 9.1rem;height: 10.4rem;margin: 0 auto;padding: .5rem .6rem 0;overflow: auto}
+.activity-rule-con-box{width: 10.7rem;height: 11.7rem;margin: .5rem auto 0;overflow: hidden;}
+.activity-rule-con,.personal-center-con{width: 9.5rem;height: 10.4rem;margin: 0 auto;padding: .5rem .6rem 0;overflow: auto;}
 .personal-center-con{height: 9.3rem;padding-top: 0;}
-.activity-rule-con p,.personal-center-con p{font-size: .52rem;color: #666;line-height: .8rem}
+.activity-rule-con p,.personal-center-con p{font-size: .52rem;color: #666;line-height: .8rem;}
 .activity-rule h3{width: 15rem;height: .7rem;text-align: center;font-size: .72rem;color: #f0793e;margin-top: .3rem}
