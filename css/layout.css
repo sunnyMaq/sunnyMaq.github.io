@@ -41,7 +41,7 @@
 .activity-rule-title img{width: 4.86rem;}
 .btn-close{display: block;width: 1.4rem;height: 1.4rem;margin-left: 11.6rem}
 .activity-rule-con-box{width: 10.7rem;height: 11.7rem;margin: .2rem auto 0;overflow: hidden}
-.activity-rule-con,.personal-center-con{width: 9.1rem;height: 10rem;margin: .2rem auto 0;padding: .5rem .6rem 0;overflow: auto}
-.personal-center-con{height: 10.2rem}
+.activity-rule-con,.personal-center-con{width: 9.1rem;height: 10.4rem;margin: .2rem auto 0;padding: .5rem .6rem 0;overflow: auto}
+.personal-center-con{height: 8.9rem}
 .activity-rule-con p,.personal-center-con p{font-size: .52rem;color: #666;line-height: .8rem}
-.personal-center-con h3{width: 10rem;height: .7rem;text-align: center;font-size: .72rem;color: #f0793e;margin:-.3rem 0 .6rem -.6rem;}
+.activity-rule-con-box h3{width: 10.7rem;height: .7rem;text-align: center;font-size: .72rem;color: #f0793e;margin-top: .3rem}
