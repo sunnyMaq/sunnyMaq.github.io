@@ -29,7 +29,7 @@
 .draw-list-con{}
 .draw-list-con li{position: relative;width: 12.6rem;height: .5rem;margin-bottom: .6rem;font-size: .48rem;color: #666;line-height: .6rem;}
 .draw-list-con li:nth-last-child(1){margin-top: 0;}
-.circle{position: absolute;top:.15rem;;display: inline-block;width: .2rem;height: .2rem;background: url("../img/circle.png")center;}
+.circle{position: absolute;top:.15rem;display: inline-block;width: .2rem;height: .2rem;background: url("../img/circle.png")center;background-size: .2rem .2rem;}
 .draw-list-con li p{display: inline-block;width:11.9rem;line-height: .48rem;text-overflow: ellipsis;white-space: nowrap;overflow: hidden}
 .draw-list-con li p i{color: #8f7f7e;font-size: .44rem;}
 .prize{display: inline-block;margin: 0 .3rem;width: 3.5rem;text-overflow: ellipsis;white-space: nowrap;overflow: hidden}
