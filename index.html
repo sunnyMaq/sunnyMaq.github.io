@@ -310,7 +310,7 @@
     function scroll(){
         if($(".draw-list-con li").length > 3){
             timer = setInterval(function(){
-                $(".draw-list-con").animate({"margin-top":"-.9rem"},function(){
+                $(".draw-list-con").animate({"margin-top":"-1rem"},function(){
                     $(".draw-list-con li:eq(0)").appendTo($(".draw-list-con"));
                     $(".draw-list-con").css({"margin-top":0});
                 });
