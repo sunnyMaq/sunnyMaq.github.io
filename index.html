@@ -6,11 +6,12 @@
 <meta content="yes" name="apple-touch-fullscreen" />
 <meta content="telephone=no,email=no" name="format-detection" />
 <meta name="viewport" content="initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no">
-<title>娱栈--欢度新春</title>
+<title>娱栈--欢度春节</title>
 <meta name="description" content="" />
 <meta name="keywords" content="" />
 <link rel="stylesheet" type="text/css" href="css/base.css" />
-<link rel="stylesheet" type="text/css" href="css/layout.css" />
+<link rel="stylesheet" type="text/css" href="css/2.css" />
+
 <script type="text/javascript" src="js/jquery-1.12.1.min.js"></script>
 <script type="text/javascript" src="js/awardRotate.js"></script>
 <script type="text/javascript" src="js/base.js"></script>
@@ -132,7 +133,7 @@
           //font 属性设置或返回画布上文本内容的当前字体属性
           var clientW = document.documentElement.clientWidth;
           if(clientW < 450){
-              ctx.font = '1rem Microsoft YaHei';
+              ctx.font = '.8rem Microsoft YaHei';
           }else {
               ctx.font = '.4rem Microsoft YaHei';
           }
@@ -163,7 +164,7 @@
                   var texts = text.split("积分");
                   for(var j = 0; j<texts.length; j++){
                       if(clientW < 450){
-                          ctx.font = j == 0?'bold 1.2rem Microsoft YaHei':'1rem Microsoft YaHei';
+                          ctx.font = j == 0?'bold 1rem Microsoft YaHei':'1rem Microsoft YaHei';
                       }else {
                           ctx.font = j == 0?'bold .5rem Microsoft YaHei':'1rem Microsoft YaHei';
                       }
@@ -306,22 +307,21 @@
 </body>
 <script>
     // 中奖信息
-    function scroll(){
-        $(".draw-list-con").animate({"margin-top":"-1.2rem"},function(){
-            $(".draw-list-con li:eq(0)").appendTo($(".draw-list-con"));
-            $(".draw-list-con").css({"margin-top":0});
-        });
-    }
     var timer;
-//    var timerOutSide = setInterval(function(){
-//
-//    },5000);
-    if($(".draw-list-con li").length > 3){
-        //clearInterval(timerOutSide);
-        timer = setInterval(scroll,1000);
-    }else {
-        clearInterval(timer);
+    function scroll(){
+        if($(".draw-list-con li").length > 3){
+            timer = setInterval(function(){
+                $(".draw-list-con").animate({"margin-top":"-.9rem"},function(){
+                    $(".draw-list-con li:eq(0)").appendTo($(".draw-list-con"));
+                    $(".draw-list-con").css({"margin-top":0});
+                });
+            },1000);
+        }else {
+            clearInterval(timer);
+        }
     }
+    scroll();
+
     //活动规则
     $(".btn-activity-rule").click(function(){
         $(".activity-rule-box").show();
