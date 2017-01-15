@@ -132,7 +132,7 @@
           //font 属性设置或返回画布上文本内容的当前字体属性
           var clientW = document.documentElement.clientWidth;
           if(clientW < 450){
-              ctx.font = '.8rem Microsoft YaHei';
+              ctx.font = '1rem Microsoft YaHei';
           }else {
               ctx.font = '.4rem Microsoft YaHei';
           }
@@ -163,7 +163,7 @@
                   var texts = text.split("积分");
                   for(var j = 0; j<texts.length; j++){
                       if(clientW < 450){
-                          ctx.font = j == 0?'bold 1rem Microsoft YaHei':'1rem Microsoft YaHei';
+                          ctx.font = j == 0?'bold 1.2rem Microsoft YaHei':'1rem Microsoft YaHei';
                       }else {
                           ctx.font = j == 0?'bold .5rem Microsoft YaHei':'1rem Microsoft YaHei';
                       }
