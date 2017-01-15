@@ -18,8 +18,8 @@
 .turncol .turnplate img.pointer{position:absolute;width:31.5%;height:38%;left:34.6%;top:27%}
 
 /*抽奖机会*/
-.lucky-draw{margin: 0 auto;width: 13.5rem;height: 1.76rem;background:url("../img/yz_ny_chance_bg-690-88.png") center;background-size: 13.5rem 1.76rem;text-align: center; overflow: hidden}
-.lucky-draw-tips{font-size: .6rem;color: #c82c2f;margin-top: .22rem}
+.lucky-draw{margin: 0 auto;width: 13.5rem;height: 1.76rem;background:url("../img/yz_ny_chance_bg-690-88.png") center;background-size: 13.5rem 1.76rem; overflow: hidden}
+.lucky-draw-tips{margin: .12rem auto 0;display: block;width: 7.2rem;height: 1.2rem;line-height: 1.2rem;text-align: center;font-size: .6rem;color: #c82c2f;}
 .lucky-draw-tips i{margin: 0 .1rem;font-size: .72rem;color: #fff;font-weight: 500;}
 
 /*抽奖列表*/
