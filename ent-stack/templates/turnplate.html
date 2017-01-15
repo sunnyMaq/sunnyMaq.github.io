@@ -1,0 +1,296 @@
+﻿<!DOCTYPE HTML>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta content="yes" name="apple-mobile-web-app-capable" />
+<meta content="yes" name="apple-touch-fullscreen" />
+<meta content="telephone=no,email=no" name="format-detection" />
+<meta name="viewport" content="initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no">
+<title>娱栈--幸运大抽奖</title>
+<meta name="description" content="" />
+<meta name="keywords" content="" />
+<link rel="shortcut icon" type="image/x-icon" href="../favicon.ico" />
+<link rel="apple-touch-icon-precomposed" href="../touch_icon.png" />
+<link rel="stylesheet" type="text/css" href="../css/base.css" />
+<link rel="stylesheet" type="text/css" href="../css/layout.css" />
+<script type="text/javascript" src="../js/jquery-1.12.1.min.js"></script>
+<script type="text/javascript" src="../js/jquery.lazyload.js"></script>
+<script type="text/javascript" src="../js/base.js"></script>
+<script type="text/javascript" src="../js/awardRotate.js"></script>
+<!-- <script type="text/javascript" src="../js/screen-width.js"></script> -->
+<script type="text/javascript">
+    var turnplate={
+        restaraunts:[],             //大转盘奖品名称
+        colors:[],                  //大转盘奖品区块对应背景颜色
+        outsideRadius:180,          //大转盘外圆的半径
+        textRadius:145,             //大转盘奖品位置距离圆心的距离
+        insideRadius:0,         //大转盘内圆的半径
+        startAngle:0,               //开始角度
+        
+        bRotate:false               //false:停止;ture:旋转
+    };
+
+    $(document).ready(function(){
+        $("body").css({"background-color":"#FFF9E6"});
+        
+        //动态添加大转盘的奖品与奖品区域背景颜色
+        turnplate.restaraunts = ["40积分", "礼包一", "60积分", "再来一次", "礼包二", "100积分", "礼包三 ", "谢谢参与", "20积分", "再来一次"];
+        turnplate.colors = ["#5FCBD4", "#FFFFFF", "#5FCBD4", "#FFFFFF","#5FCBD4", "#FFFFFF", "#5FCBD4", "#FFFFFF","#5FCBD4", "#FFFFFF"];
+
+        
+        var rotateTimeOut = function (){
+            $('#wheelcanvas').rotate({
+                angle:0,
+                animateTo:2160,
+                duration:8000,
+                callback:function (){
+                    alert('网络超时，请检查您的网络设置！');
+                }
+            });
+        };
+
+        //旋转转盘 item:奖品位置; txt：提示语;
+        var rotateFn = function (item, txt){
+            var angles = item * (360 / turnplate.restaraunts.length) - (360 / (turnplate.restaraunts.length*2));
+            if(angles<270){
+                angles = 270 - angles; 
+            }else{
+                angles = 360 - angles + 270;
+            }
+            $('#wheelcanvas').stopRotate();
+            $('#wheelcanvas').rotate({
+                angle:0,
+                animateTo:angles+1800,
+                duration:8000,
+                callback:function (){
+                    alert(txt);
+                    turnplate.bRotate = !turnplate.bRotate;
+                }
+            });
+        };
+
+        $('.pointer').click(function (){
+            if(turnplate.bRotate)return;
+            turnplate.bRotate = !turnplate.bRotate;
+            //获取随机数(奖品个数范围内)
+            var item = rnd(1,turnplate.restaraunts.length);
+            //奖品数量等于10,指针落在对应奖品区域的中心角度[252, 216, 180, 144, 108, 72, 36, 360, 324, 288]
+            rotateFn(item, turnplate.restaraunts[item-1]);
+            /* switch (item) {
+                case 1:
+                    rotateFn(252, turnplate.restaraunts[0]);
+                    break;
+                case 2:
+                    rotateFn(216, turnplate.restaraunts[1]);
+                    break;
+                case 3:
+                    rotateFn(180, turnplate.restaraunts[2]);
+                    break;
+                case 4:
+                    rotateFn(144, turnplate.restaraunts[3]);
+                    break;
+                case 5:
+                    rotateFn(108, turnplate.restaraunts[4]);
+                    break;
+                case 6:
+                    rotateFn(72, turnplate.restaraunts[5]);
+                    break;
+                case 7:
+                    rotateFn(36, turnplate.restaraunts[6]);
+                    break;
+                case 8:
+                    rotateFn(360, turnplate.restaraunts[7]);
+                    break;
+                case 9:
+                    rotateFn(324, turnplate.restaraunts[8]);
+                    break;
+                case 10:
+                    rotateFn(288, turnplate.restaraunts[9]);
+                    break;
+            } */
+            console.log(item);
+        });
+    });
+
+    function rnd(n, m){
+        var random = Math.floor(Math.random()*(m-n+1)+n);
+        return random;
+        
+    }
+
+
+    //页面所有元素加载完毕后执行drawRouletteWheel()方法对转盘进行渲染
+    window.onload=function(){
+        drawRouletteWheel();
+    };
+
+    function drawRouletteWheel() {    
+      var canvas = document.getElementById("wheelcanvas");    
+      if (canvas.getContext) {
+          //根据奖品个数计算圆周角度
+          var arc = Math.PI / (turnplate.restaraunts.length/2);
+          var ctx = canvas.getContext("2d");
+          //在给定矩形内清空一个矩形
+          ctx.clearRect(0,0,422,422);
+          //strokeStyle 属性设置或返回用于笔触的颜色、渐变或模式  
+          ctx.strokeStyle = "#FFFFFF";
+          //font 属性设置或返回画布上文本内容的当前字体属性
+          ctx.font = '1rem Microsoft YaHei';      
+          for(var i = 0; i < turnplate.restaraunts.length; i++) {       
+              var angle = turnplate.startAngle + i * arc;
+              ctx.fillStyle = turnplate.colors[i];
+              ctx.beginPath();
+              //arc(x,y,r,起始角,结束角,绘制方向) 方法创建弧/曲线（用于创建圆或部分圆）    
+              ctx.arc(211, 211, turnplate.outsideRadius, angle, angle + arc, false);    
+              ctx.arc(211, 211, turnplate.insideRadius, angle + arc, angle, true);
+              ctx.stroke();  
+              ctx.fill();
+              //锁画布(为了保存之前的画布状态)
+              ctx.save();   
+              
+              //----绘制奖品开始----
+              ctx.fillStyle = "#F13F38";
+              var text = turnplate.restaraunts[i];
+              var line_height = 17;
+              //translate方法重新映射画布上的 (0,0) 位置
+              ctx.translate(211 + Math.cos(angle + arc / 2) * turnplate.textRadius, 211 + Math.sin(angle + arc / 2) * turnplate.textRadius);
+              
+              //rotate方法旋转当前的绘图
+              ctx.rotate(angle + arc / 2 + Math.PI / 2);
+              
+              /** 下面代码根据奖品类型、奖品名称长度渲染不同效果，如字体、颜色、图片效果。(具体根据实际情况改变) **/
+              if(text.indexOf("积分")>0){//流量包
+                  var texts = text.split("积分");
+                  for(var j = 0; j<texts.length; j++){
+                      ctx.font = j == 0?'bold 1.25rem Microsoft YaHei':'1rem Microsoft YaHei';
+                      if(j == 0){
+                          ctx.fillText(texts[j]+"积分", -ctx.measureText(texts[j]+"积分").width / 2, j * line_height);
+                      }else{
+                          ctx.fillText(texts[j], -ctx.measureText(texts[j]).width / 2, j * line_height);
+                      }
+                  }
+              }else if(text.indexOf("积分") == -1 && text.length>6){//奖品名称长度超过一定范围 
+                  text = text.substring(0,6)+"||"+text.substring(6);
+                  var texts = text.split("||");
+                  for(var j = 0; j<texts.length; j++){
+                      ctx.fillText(texts[j], -ctx.measureText(texts[j]).width / 2, j * line_height);
+                  }
+              }else{
+                  //在画布上绘制填色的文本。文本的默认颜色是黑色
+                  //measureText()方法返回包含一个对象，该对象包含以像素计的指定字体宽度
+                  ctx.fillText(text, -ctx.measureText(text).width / 2, 0);
+              }
+              
+              //添加对应图标
+              if(text.indexOf("礼包")>=0){
+                  var img= document.getElementById("gift-img");
+                  img.onload=function(){  
+                      ctx.drawImage(img,-42,-27);      
+                  }; 
+                  ctx.drawImage(img,-42,-27);  
+              }
+              //把当前画布返回（调整）到上一个save()状态之前 
+              ctx.restore();
+              //----绘制奖品结束----
+          }     
+      } 
+    }
+</script>
+</head>
+
+<body data-ctrl-name="pageview" class="fullscreen">
+    <div class="wrapper" name="index" class="view" id="view-1" style="background-color:#FFF9E6">
+        <div data-ctrl-name="scrollview" class="scrollview" data-dpr="1">
+            <!-- 导航标签栏 start -->
+            <div class="top-fixed">
+                <header>
+                    <div class="header-wrap">
+                        <span class="go-back" ng-click="back()"></span>
+                        <div class="nav-header">
+                            <span class="title">幸运大转盘</span>
+                        </div>
+                    </div>
+                </header>
+            </div>
+            <!-- 导航标签栏 end -->
+
+            <div class="scroll-wrap">
+                <div class="scroll-content">
+                    <div class="content">
+                        <section data-group="1">
+                            <!-- 推广图banner start -->
+                            <div class="tbanner">
+                                <div class="UIView">
+                                    <div class="slide-banner">
+                                        <ul class="carrousel" data-ctrl-name="carrousel">
+                                            <li class="card spread">
+                                                <a href="javascript:void(0);" data-type="split_flow"><img src="../img/pic/yzgx_lucky_bigwheel-750-355.jpg" alt="" /></a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- 推广图banner end -->
+
+                            <!-- 大转盘 start -->
+                            <div class="turn-con" data-template-name="turnplate">
+                                <img src="../img/wheel/yzgx_icon_gift-80-95.png" id="gift-img" style="display:none;" />
+                                <div class="turncol">
+                                    <div class="turnplate" style="background-image:url(../img/wheel/yzgx_turnplate_bg-542-542.png);background-size:100% 100%;">
+                                        <canvas class="item" id="wheelcanvas" width="421px" height="421px"></canvas>
+                                        <img class="pointer" src="../img/wheel/yzgx_turnplate_pointer-168-200.png"/>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- 大转盘 end -->
+
+                            <div class="list-winning">
+                                <div class="tabview-list">
+                                    <ul class="tabview-tabs">
+                                        <li class="tab-item tabview-tab"><a ui-sref="tpl.prizes">查看我的奖品<em class="spoil-icon"></em></a></li>
+                                        <li class="tab-item-hline"></li>
+                                        <li class="tab-item tabview-tab"><a ui-sref="tpl.mine">查看我的积分<em class="point-icon"></em></a></li>
+                                    </ul>
+                                </div>
+                                <div class="cell-item">每人每天抽奖次数：<em class="num">3</em></div>
+                                <h3>中奖名单</h3>
+                                <ul data-page="1">
+                                    <li class="item-winning">
+                                        <div class="item-winninfo">
+                                            <div class="item-winncon">
+                                                <div class="item-winnbox line-tit tl"><span class="gray">18511290918</span></div>
+                                                <div class="item-winnbox"><span class="gray">获得1000000000积分</span></div>
+                                                <div class="item-winnbox tr"><span class="lgray">2016-08-04 11:33</span></div>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li class="item-winning">
+                                        <div class="item-winninfo">
+                                            <div class="item-winncon">
+                                                <div class="item-winnbox line-tit tl"><span class="gray">623621001@qq.comcom</span></div>
+                                                <div class="item-winnbox"><span class="gray">获得100积分</span></div>
+                                                <div class="item-winnbox tr"><span class="lgray">2016-08-04 11:33</span></div>
+                                            </div>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+                        </section>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script type="text/javascript">
+        //懒加载
+        $(document).ready(function($){
+            $("img.lazy").lazyload({
+                 threshold : 200, //距离图片还有200像素的时候，开始加载图片
+                 placeholder : "../img/loading_lazy-52-52.gif", //加载图片前的占位图片
+                 effect      : "fadeIn" //加载图片使用的效果(淡入)
+            });
+        }); 
+    </script>
+</body>
+</html>
