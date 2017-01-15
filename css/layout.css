@@ -27,10 +27,10 @@
 .draw-list h3{display: inline-block;margin:.6rem auto 0 ;font-size: .6rem;color: #c82c2f}
 .draw-list-con-box{width: 12.3rem;height: 3rem;padding: 0 .3rem;margin-top: .2rem;overflow: hidden}
 .draw-list-con{}
-.draw-list-con li{position: relative;width: 12.6rem;height: .5rem;margin-bottom: .6rem;font-size: .48rem;color: #666;line-height: .6rem;}
+.draw-list-con li{border: 1px solid #000;position: relative;width: 12.6rem;height: .5rem;margin-bottom: .6rem;font-size: .48rem;color: #666;line-height: .6rem;}
 .draw-list-con li:nth-last-child(1){margin-top: 0;}
-.circle{position: absolute;display: inline-block;width: .2rem;height: .4rem;background: url("../img/circle.png")center;background-size: .2rem .4rem;}
-.draw-list-con li p{display: inline-block;width:11.9rem;line-height: .48rem;text-overflow: ellipsis;white-space: nowrap;overflow: hidden}
+.circle{position: absolute;left: .1rem;display: inline-block;width: .2rem;height: .4rem;background: url("../img/circle.png")center;background-size: .2rem .4rem;}
+.draw-list-con li p{border: 1px solid #ccc;display: inline-block;width:11.9rem;line-height: .48rem;text-overflow: ellipsis;white-space: nowrap;overflow: hidden}
 .draw-list-con li p i{color: #8f7f7e;font-size: .44rem;}
 .prize{display: inline-block;margin: 0 .3rem;width: 3.5rem;text-overflow: ellipsis;white-space: nowrap;overflow: hidden}
 
