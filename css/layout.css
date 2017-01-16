@@ -1,29 +1,31 @@
 @charset "utf-8";
 
-.banner{position: relative;width:15rem;height: 8.4rem;margin: 0 auto;}
-.banner img{width: 15rem;height: 8.4rem;}
-.btn-activity-rule,.btn-personal-center{position: absolute;padding: .3rem .4rem 0;width: 1.3rem;height: 1.7rem;line-height: .7rem;
-    font-size: .6rem;color: #fff;text-align: center;text-indent: -999px}
+.banner{position: relative;width:15rem;height: 17.2rem;margin: 0 auto;}
+.banner img{width: 15rem;height: 17.2rem;}
 .btn-activity-rule{top:3.2rem;right: .2rem}
 .btn-personal-center{top:6rem;right: .2rem}
-.bg-chicken{margin: 0 auto;width: 15rem;height: 15.8rem;background:url("../img/yz_ny_bg_chicken_750-790.jpg")center;background-size: 15rem 15.8rem;}
-.bg-chicken img{width: 15rem;height: 15.8rem;}
-.content{margin: 0 auto;padding-bottom: 2rem;width: 15rem;background: url("../img/bg.jpg");background-size: 15rem 30rem}
+.content{margin: 0 auto;width: 15rem;background: url("../img/bg.jpg");background-size: 15rem 32rem}
 
 /*幸运大转盘*/
 .turn-con{overflow-x:hidden;width: 100%;}
-.turncol{display:block;width:85%;margin:1rem auto 1rem}
+.turncol{display:block;width:85%;margin:.3rem auto .8rem}
 .turncol .turnplate{display:block;width:100%;position:relative}
 .turncol .turnplate canvas.item{width:100%;margin: 0 auto}
 .turncol .turnplate img.pointer{position:absolute;width:31.5%;height:38%;left:34.6%;top:27%}
 
 /*抽奖机会*/
-.lucky-draw{margin: 0 auto;width: 13.5rem;height: 1.76rem;background:url("../img/yz_ny_chance_bg-690-88.png") center;background-size: 13.5rem 1.76rem; overflow: hidden}
-.lucky-draw-tips{margin: .12rem auto 0;display: block;width: 7.2rem;height: 1.2rem;line-height: 1.2rem;text-align: center;font-size: .6rem;color: #c82c2f;}
-.lucky-draw-tips i{margin: 0 .1rem;font-size: .72rem;color: #fff;font-weight: 500;}
+.lucky-draw{margin: 0 auto;width: 13.5rem;height: 1.78rem;background:url("../img/yz_ny_chance_bg-690-89.png") center;background-size: 13.5rem 1.78rem; overflow: hidden}
+.lucky-draw-tips{margin: 0 auto;display: block;width: 11.3rem;height: 1.78rem;line-height: 1.78rem;text-align: center;font-size: .6rem;color: #c82c2f;}
+.lucky-draw-tips i{margin: 0 .1rem;font-size: .72rem;color: #c82c2f;font-weight: 500;}
 
+/*按钮*/
+.btn-click-lucky{display:block;width: 11.3rem;height: 2.6rem;margin: .5rem auto 0 ;background: url("../img/btn-download.png") center;background-size: 11.3rem 2.6rem}
+.btn-box{width: 13.8rem;height: 2.6rem;margin:0 auto;text-align: center;}
+.btn-box span{display: inline-block;width: 5.2rem;height: 2.6rem;margin: 0 .5rem;}
+.btn-activity-rule{background: url("../img/btn-rule.png") center;background-size: 5.2rem 2.6rem}
+.btn-personal-center{background: url("../img/btn-personal.png") center;background-size: 5.2rem 2.6rem}
 /*抽奖列表*/
-.draw-list{margin: .8rem auto 0;width: 13.5rem;height: 5.2rem;background: url("../img/yz_ny_list_bg-690-260.png") center;background-size: 13.5rem 5.2rem;text-align: center;}
+.draw-list{margin: .3rem auto 0;width: 13.5rem;height: 5.2rem;background: url("../img/yz_ny_list_bg-690-260.png") center;background-size: 13.5rem 5.2rem;text-align: center;}
 .draw-list h3{display: inline-block;margin:.6rem auto 0 ;font-size: .6rem;color: #c82c2f}
 .draw-list-con-box{width: 12.3rem;height: 3rem;padding: 0 .3rem;margin-top: .2rem;overflow: hidden}
 .draw-list-con{}
@@ -45,3 +47,4 @@
 .personal-center-con{height: 9.3rem;padding-top: 0;}
 .activity-rule-con p,.personal-center-con p{font-size: .52rem;color: #666;line-height: .8rem;}
 .activity-rule h3{width: 15rem;height: .7rem;text-align: center;font-size: .72rem;color: #f0793e;margin-top: .3rem}
+.activity-tips{font-size: .56rem;color: #ffddb7;margin: 1.2rem auto 0;padding-bottom: .7rem;width: 15rem;text-align: center}
