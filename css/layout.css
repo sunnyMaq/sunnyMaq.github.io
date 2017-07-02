@@ -1,50 +1,81 @@
-@charset "utf-8";
+*{margin: 0;padding: 0;}
+html,body,div,h1,h2,h3,h4,h5,h6,ul,ol,li,dl,dt,dd,p,blockquote,pre,form,fieldset,table,th,td,map{margin:0;padding:0;}
+body{font-family: "Microsoft YaHei","微软雅黑",Helvetica,"SimSun",Arial,Tahoma,Verdana}
+h1,h2,h3,h4,h5,h6{font-weight: normal;line-height: 0}
+ul,ol,dl,li{list-style:none;}
+a{text-decoration: none}
+i,em{font-style: normal}
+input,textarea{outline: none;}
+.por{position: relative}
+.poa{position: absolute}
+.fl{float: left}
+.fr{float: right}
+.clearfix:after{content: "";display: block;clear: both}
+.clearfix{zoom: 1}
 
-.banner{position: relative;width:15rem;height: 17.2rem;margin: 0 auto;}
-.banner img{width: 15rem;height: 17.2rem;}
-.btn-activity-rule{top:3.2rem;right: .2rem}
-.btn-personal-center{top:6rem;right: .2rem}
-.content{margin: 0 auto;width: 15rem;background: url("../img/bg.jpg");background-size: 15rem 32rem}
+header{width: 15rem;height: 2rem;margin: 0 auto;z-index: 999;position: relative}
+header .logo{width: 9.2rem;height: 2rem;}
+header .btn-menu{display: inline-block;width: 1rem;height: 1.4rem;text-align: center;margin:.4rem .5rem 0 0;overflow: hidden }
+header .btn-menu img{width: .94rem;height: .84rem;}
+header .menu{display: none;margin-right: .2rem;width:5.1rem;border-radius: .2rem;overflow: hidden;}
+header .menu li{width: 4.3rem;height: 1.21rem;background: #3e4551;padding: .47rem 0 0 .8rem;font-size: .52rem;color: #ccc;position: relative}
+header .menu li .user{background: #545c6b;}
+header .menu li i{margin-left: 1.04rem}
+header .menu li .sprite{display: inline-block;position: absolute;top:.62rem;margin-right: .4rem;width: .56rem;height: .48rem;
+    background: url("../img/sprite.png") ;background-position: 0 0 ;background-size: 12rem 6rem}
+header .menu li .pre{background-position: 0 -.75rem;}
+header .menu li .int{background-position: 0 -1.47rem}
+header .menu li .meet{background-position: 0 -2.1rem}
+header .menu li .user{background-position: 0 -2.85rem}
+header .menu li .exit{background-position: 0 -3.5rem}
 
-/*幸运大转盘*/
-.turn-con{overflow-x:hidden;width: 100%;}
-.turncol{display:block;width:85%;margin:.3rem auto .8rem}
-.turncol .turnplate{display:block;width:100%;position:relative}
-.turncol .turnplate canvas.item{width:100%;margin: 0 auto}
-.turncol .turnplate img.pointer{position:absolute;width:31.5%;height:38%;left:34.6%;top:27%}
+nav{width: 15rem;height: 3.6rem;display: -webkit-box;margin: 0 auto;position: absolute;top:8.4rem}
+nav div{margin-top: .44rem;-webkit-box-flex: 4;font-size: .48rem;color: #666;text-align: center;}
+nav div a{color: #666;}
+nav div a:active{color: #666}
+nav div p{margin-top: .1rem}
+nav .sprite{display:inline-block;width: 1.7rem;height: 1.7rem;background: url("../img/sprite.png");
+    background-size: 12rem 6rem;background-position: -1.1rem 0}
+nav .pre{background-position: -1.1rem -1.94rem;}
+nav .int{background-position: -1.1rem -3.84rem}
+nav .meet{background-position: -3rem 0}
 
-/*抽奖机会*/
-.lucky-draw{margin: 0 auto;width: 13.5rem;height: 1.78rem;background:url("../img/yz_ny_chance_bg-690-89.png") center;background-size: 13.5rem 1.78rem; overflow: hidden}
-.lucky-draw-tips{margin: 0 auto;display: block;width: 11.3rem;height: 1.78rem;line-height: 1.78rem;text-align: center;font-size: .6rem;color: #c82c2f;}
-.lucky-draw-tips i{margin: 0 .1rem;font-size: .72rem;color: #c82c2f;font-weight: 500;}
+.content{width: 15rem;margin: 10rem auto 0;}
+.content .con-business{}
+.con-header{width: 13.8rem;height: 1.5rem;background: #f3f4f5;padding: .3rem .6rem 0;}
+.con-header i{margin-top: .8rem;font-size: .6rem;color: #333;}
+.con-header .con-more{margin-top: .55rem;font-size: .48rem;color: #999;}
+.con-list{width: 15rem;}
+.con-list li{position: relative;padding: .48rem .6rem 0;;width:13.8rem;height:2.9rem;border-bottom: .02rem solid #f3f4f5; }
+.con-list li img{width: 4.8rem;height: 2.4rem;}
+.con-list li .course-title{position:absolute;left: 5.8rem;display: inline-block;width: 8.8rem;height: 1.68rem;
+    line-height: .84rem;font-size: .62rem;color: #666;}
+.con-list li .course-teacher{font-size: .52rem;color: #999;}
+.con-list li .course-price{font-size: .72rem;color: #ff7f27;margin-top:1.6rem;}
+.con-list li .course-free{font-size: .72rem;color: #5f9beb;margin-top:1.6rem;}
+.con-list li .icon-video{position: absolute;top:.44rem;left: 4.1rem;display: inline-block;width: 1.3rem;height: 1.2rem;
+    background: url("../img/sprite.png");background-size: 12rem 6rem;background-position: -3rem -1.94rem;}
 
-/*按钮*/
-.btn-click-lucky{display:block;width: 11.3rem;height: 2.6rem;margin: .5rem auto 0 ;background: url("../img/btn-download.png") center;background-size: 11.3rem 2.6rem}
-.btn-box{width: 13.8rem;height: 2.6rem;margin:0 auto;text-align: center;}
-.btn-box span{display: inline-block;width: 5.2rem;height: 2.6rem;margin: 0 .5rem;}
-.btn-activity-rule{background: url("../img/btn-rule.png") center;background-size: 5.2rem 2.6rem}
-.btn-personal-center{background: url("../img/btn-personal.png") center;background-size: 5.2rem 2.6rem}
-/*抽奖列表*/
-.draw-list{margin: .3rem auto 0;width: 13.5rem;height: 5.2rem;background: url("../img/yz_ny_list_bg-690-260.png") center;background-size: 13.5rem 5.2rem;text-align: center;}
-.draw-list h3{display: inline-block;margin:.6rem auto 0 ;font-size: .6rem;color: #c82c2f}
-.draw-list-con-box{width: 12.3rem;height: 3rem;padding: 0 .3rem;margin-top: .2rem;overflow: hidden}
-.draw-list-con{}
-.draw-list-con li{position: relative;width: 12.6rem;height: .5rem;margin-bottom: .6rem;font-size: .48rem;color: #666;line-height: .6rem;}
-.draw-list-con li:nth-last-child(1){margin-top: 0;}
-.circle{position: absolute;left: .2rem;display: inline-block;width: .3rem;height: .4rem;background: url("../img/circle.png")center;background-size: .3rem .4rem;}
-.draw-list-con li p{display: inline-block;width:11.9rem;line-height: .48rem;text-overflow: ellipsis;white-space: nowrap;overflow: hidden}
-.draw-list-con li p i{color: #8f7f7e;font-size: .44rem;}
-.prize{display: inline-block;margin: 0 .3rem;width: 3.5rem;text-overflow: ellipsis;white-space: nowrap;overflow: hidden}
+.coop{margin-bottom: 1rem}
+.coop .coop-nav{width: 13.8rem;height: 1.76rem;padding: 0 .6rem;border-bottom: .02rem solid #f3f4f5;overflow: hidden}
+.coop .coop-nav li{float: left;margin: 0 1.2rem;line-height: 1.68rem;width: 2.01rem;font-size: .64rem;color: #666;}
+.on{border-bottom: 0.08rem solid #5f9beb;}
+.coop .coop-gov{width: 13.8rem;padding: 0 .6rem;margin-top: .8rem}
+.coop .coop-gov a span{display: block;margin-bottom: .6rem;width: 13.8rem;height: 1.6rem;font-size: .6rem;color: #666;text-align:center;line-height: 1.6rem;background: #e8e9eb;border-radius:0.14rem; }
+.coop .coop-gov a{color: #666;}
+.coop .coop-gov a:active{color: #666;}
 
-/*活动规则*/
-.activity-rule-box,.personal-center-box{display: none;position: fixed;width: 100%;height: 100%;top:0;left: 0;background: rgba(0,0,0,.5);z-index: 9999;overflow: hidden;}
-.activity-rule{position: absolute;z-index:-1;width:15rem;height: 16.6rem;left: 50%;margin-top: 4rem;margin-left: -7.5rem;background: url("../img/yz_ny_rule_bg-750-830.png");background-size: 15rem 16.6rem;overflow: hidden;}
-.activity-rule-title{width: 15rem;text-align: center;margin: 1.8rem 0 .2rem}
-.activity-rule-title img{width: 4.86rem;}
-.btn-close{display: block;width: 1.4rem;height: 1.4rem;margin-left: 11.6rem}
-.activity-rule-con-box{width: 10.7rem;height: 11.7rem;margin: .5rem auto 0;overflow: hidden;}
-.activity-rule-con,.personal-center-con{width: 9.5rem;height: 10.4rem;margin: 0 auto;padding: .5rem .6rem 0;overflow: auto;}
-.personal-center-con{height: 9.3rem;padding-top: 0;}
-.activity-rule-con p,.personal-center-con p{font-size: .52rem;color: #666;line-height: .8rem;}
-.activity-rule h3{width: 15rem;height: .7rem;text-align: center;font-size: .72rem;color: #f0793e;margin-top: .3rem}
-.activity-tips{font-size: .56rem;color: #ffddb7;margin: 1.2rem auto 0;padding-bottom: .7rem;width: 15rem;text-align: center}
+footer{margin: 0 auto;width: 13.8rem;padding: 0 .6rem;;background:#3f4249;overflow: hidden}
+footer p{margin:.5rem 0 .7rem;font-size:.4rem;color:#999;text-align: center;line-height: .7rem;}
+
+.login{margin: .16rem auto 0;width: 14rem;padding: 0 .5rem;overflow: hidden}
+.login label input{margin-top: .8rem;padding-left:1.4rem;width: 12.6rem;height: 1.8rem;font-size: .48rem;background: #fff;border-radius: .14rem;border: none}
+.login .login-btn{margin-top: .8rem;width: 14rem;height: 1.8rem;line-height: 1.8rem;text-align: center;color: #fff;
+    font-size: .6rem;letter-spacing: .5rem;border-radius: .14rem;background: #5f9beb;border: none}
+.login-other{}
+.login-other i{font-size: .49rem;color: #5f9beb;}
+.login-other span{margin-top: .5rem;font-size: .48rem;color: #ccc;}
+.login-other span em{color: #ff7f27}
+.login label{position: relative}
+.login-info{display: inline-block;position:absolute;top:.6rem;left: .4rem;width: .62rem;height: .66rem;background: url("../img/sprite.png");background-size: 12rem 6rem;background-position:-5.08rem  0}
+.password{background-position: -5.08rem -.95rem}

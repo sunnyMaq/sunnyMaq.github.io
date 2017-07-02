@@ -1,9 +1,0 @@
-@charset "utf-8";
-
-body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pre,code,form,fieldset,legend,input,textarea,p,blockquote,th,td,hr,button,article,aside,details,figcaption,figure,footer,header,hgroup,menu,nav,section{margin:0;padding:0}
-body{font-family: "Microsoft YaHei","微软雅黑",Helvetica,"SimSun",Arial,Tahoma,Verdana}
-i,em{font-style: normal}
-h1,h2,h3,h4,h5,h6{font-weight:normal}
-li{list-style: none}
-.clearfix:after{content:".";visibility:hidden;display:block;clear:both;height:0}
-.clearfix{*zoom:1}
